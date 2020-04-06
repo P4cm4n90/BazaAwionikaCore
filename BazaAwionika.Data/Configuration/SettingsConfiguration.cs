@@ -39,5 +39,6 @@ namespace BazaAwionika.Data.Configuration
             builder.HasMany(c => c.UlbTest).WithOne(c => c.Settings).HasForeignKey(c => c.SettingsId).IsRequired(false).OnDelete(DeleteBehavior.ClientSetNull);
 
         }
-    
+
+    }
 }

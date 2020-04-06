@@ -12,7 +12,7 @@ namespace BazaAwionika.Data.Configuration
     {
 
 
-        public void Configure(EntityTypeBuilder<TestDcfModel> builder)
+        public void Configure(EntityTypeBuilder<UlbCvrModel> builder)
         {
             throw new NotImplementedException();
         }

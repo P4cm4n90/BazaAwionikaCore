@@ -19,7 +19,7 @@ namespace BazaAwionika.Model
 
         public string SerialNumber { get; set; }
 
-        public int? AircraftStatusId { get; set; }
+
 
         public string Location { get; set; }
 
@@ -41,8 +41,6 @@ namespace BazaAwionika.Model
         public DateTime? DateFlightHours { get; set; } = DateTime.Now;
 
         public string AdditionalInfo { get; set; }
-
-        public int? UserId { get; set; }
 
         public virtual ICollection<AlternatorModel> Alternators { get; set; }
 
@@ -91,8 +89,12 @@ namespace BazaAwionika.Model
 
         public virtual ICollection<FlightModel> Flights { get; set; }
 
+        public int? AircraftStatusId { get; set; }
+
+        public int? UserId { get; set; }
+
         [ForeignKey("UserId")]
-        public virtual UserModel Users { get; set; }
+        public virtual UserModel User { get; set; }
 
         [ForeignKey("AircraftStatusId")]
         public virtual AircraftStatusModel AircraftStatus { get; set; }

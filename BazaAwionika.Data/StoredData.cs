@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+
 using System.Linq;
 using System.Web;
 using BazaAwionika.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace BazaAwionika.Data
 {
-    public class StoredData : DropCreateDatabaseIfModelChanges<MaintenanceEntities>
+    public class GenerateData
     {
-        protected override void Seed(MaintenanceEntities context)
+        public void Generate(MaintenanceEntities context)
         {
             GetAircrafts().ForEach(c => context.Aircraft.Add(c));
             GetAircraftStatuses().ForEach(c => context.AircraftStatuses.Add(c));

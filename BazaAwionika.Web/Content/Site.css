@@ -1,0 +1,244 @@
+﻿body {
+    padding-top: 80px;
+    padding-bottom: 20px;
+
+}
+
+@media (max-width: 979px) {
+    body {
+        padding-top: 10px;
+    }
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 12px; /* Increased text to enable scrolling */
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.ok {
+    background-color: green;
+}
+
+.caution {
+    background-color: yellow;
+}
+
+.warning {
+    background-color: orange;
+}
+
+.error {
+    background-color: red;
+}
+
+.tablenormal thead tr th div, .vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.tablenormal {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    
+    box-sizing: border-box; /* causes item size to include border and padding */
+    -moz-box-sizing: border-box;
+    width: 100%;
+}
+
+.tablenormal td, #tablenormal th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tablenormal tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tablenormal tr:hover {
+    background-color: #ddd;
+}
+
+.tablenormal th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 5px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+dl {
+    flex-wrap: wrap;
+}
+
+dt {
+    width: 33%;
+}
+
+dd {
+    margin-left: auto;
+    width: 66%;
+}
+
+.dl-horizontal dt, dd {
+    background-color: #f5f5ef;
+}
+
+    .dl-horizontal dt:nth-child(4n+1), dt:nth-child(4n+1) + dd {
+        background-color: #ebebe0;
+    }
+
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+   padding: 6px 6px 6px 32px;
+   text-decoration: none;
+   font-size: 25px;
+   color: #818181;
+   display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+
+
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+    /* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+        color: #f1f1f1;
+    }
+
+/* Main content */
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 15px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: green;
+    color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    margin-left: 200px;
+}
+
+    /* Links inside the navbar */
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        /* Change background on mouse-over */
+        .navbar a:hover {
+            background: #ddd;
+            color: black;
+        }
+
+.container body-content {
+    margin-top: 100px;
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 15px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+
+#triple_column
+* {
+    box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+#triple_column .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+}
+
+/* Clear floats after the columns */
+#triple_column .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#itemDetails {
+    padding-top: 15px
+}

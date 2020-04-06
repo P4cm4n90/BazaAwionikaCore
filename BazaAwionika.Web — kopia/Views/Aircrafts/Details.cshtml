@@ -1,0 +1,77 @@
+﻿@using BazaAwionika.Web.ViewModel;
+@model AircraftViewModel
+
+@{
+    ViewBag.Title = "Szczegóły";
+}
+<div class="w3-row">
+    <div class="w3-col w3-container m4 l3">
+        <dl class="dl-horizontal">
+
+            <dt>@Html.DisplayNameFor(model => model.TailNumber)</dt>
+            <dd>@Html.DisplayFor(model => model.TailNumber)</dd>
+            <dt>@Html.DisplayNameFor(model => model.SerialNumber)</dt>
+            <dd>@Html.DisplayFor(model => model.SerialNumber)</dd>
+            <dt>@Html.DisplayNameFor(model => model.FlightHours) </dt>
+            <dd>@Html.DisplayFor(model => model.FlightHours)</dd>
+            <dt>@Html.DisplayNameFor(model => model.DateFlightHours)</dt>
+            <dd>@Html.DisplayFor(model => model.DateFlightHours)</dd>
+            <dt>@Html.DisplayNameFor(model => model.AdditionalInfo)</dt>
+            <dd>@Html.DisplayFor(model => model.AdditionalInfo)</dd>
+            <dt>@Html.DisplayNameFor(model => model.DateAdd)</dt>
+            <dd>@Html.DisplayFor(model => model.DateAdd)</dd>
+
+        </dl>
+    </div>
+    <div class="w3-col w3-container m8 l9">
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.AircraftStatusName)</dt>
+            <dd> @Html.DisplayFor(model => model.AircraftStatusName)</dd>
+            <dt>@Html.DisplayNameFor(model => model.AircraftLocationName)</dt>
+            <dd> @Html.DisplayFor(model => model.AircraftLocationName)</dd>
+            <dt>@Html.DisplayNameFor(model => model.DateStart)</dt>
+            <dd> @Html.DisplayFor(model => model.DateStart)</dd>
+            <dt>@Html.DisplayNameFor(model => model.DateEnd)</dt>
+            <dd> @Html.DisplayFor(model => model.DateEnd)</dd>
+        </dl>
+    </div>
+</div>
+<form id="__AjaxAntiForgeryForm" action="#" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Edycja", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+        <input id="delete_btn" type="button" value="@Locale.Strings.BtnDelete" class="btn btn-default" />
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+    </div>
+</form>
+@Scripts.Render("~/bundles/jquery")
+<script type='text/javascript'>
+
+    $(document).on("click", "#delete_btn", function (e) {
+        e.preventDefault();
+        var confirmation = confirm("@Locale.Strings.DeleteConfirmation");
+        var form = $('#__AjaxAntiForgeryForm');
+        var token = $('input[name="__RequestVerificationToken"]', form).val();
+        var id = @Model.Id;
+            if (confirmation) {
+                $.ajax({
+                    url: "@Url.Action("Delete","Aircrafts", new { id = Model.Id })",
+                    type: "POST",
+                    data: {
+                        __RequestVerificationToken: token,
+                        "id": id
+                        },
+                    success: function (result) {
+                        console.log("Success: ", result)
+                    },
+                    error: function (data) {
+                        console.log("ERROR: ", data)
+                    }
+                });
+            }
+        })
+
+
+</script>

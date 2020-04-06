@@ -1,0 +1,2 @@
+﻿ <add name="MaintenanceEntities" connectionString="Data Source=DESKTOP-C6K280R\SQLEXPRESS;Initial Catalog=MaintenanceEntities;Integrated Security=True" providerName="System.Data.SqlClient" />
+ dla starego kompa

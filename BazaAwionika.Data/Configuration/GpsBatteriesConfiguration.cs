@@ -14,7 +14,7 @@ namespace BazaAwionika.Data.Configuration
 
         public void Configure(EntityTypeBuilder<GpsBatteriesModel> builder)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

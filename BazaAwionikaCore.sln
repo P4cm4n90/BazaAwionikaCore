@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazaAwionika.Web", "BazaAwionikaCore\BazaAwionika.Web.csproj", "{79AE7A4A-27D4-4721-986E-726C7357590F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazaAwionika.Data", "BazaAwionika.Data\BazaAwionika.Data.csproj", "{0046FC9D-57E6-4430-BB73-0430723C68E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazaAwionika.Data", "BazaAwionika.Data\BazaAwionika.Data.csproj", "{0046FC9D-57E6-4430-BB73-0430723C68E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazaAwionika.Model", "BazaAwionika.Model\BazaAwionika.Model.csproj", "{03E7FA20-82EF-4D0E-BE4F-027ED61ECBBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazaAwionika.Model", "BazaAwionika.Model\BazaAwionika.Model.csproj", "{03E7FA20-82EF-4D0E-BE4F-027ED61ECBBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazaAwionika.Service", "BazaAwionika.Service\BazaAwionika.Service.csproj", "{FA6FBF33-42E1-4ED6-B185-FE955CE08C74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazaAwionika.Service", "BazaAwionika.Service\BazaAwionika.Service.csproj", "{FA6FBF33-42E1-4ED6-B185-FE955CE08C74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp.csproj", "{6E4B2EE5-F1D8-479F-901B-88D257552263}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazaAwionika.Web", "BazaAwionika.Web\BazaAwionika.Web.csproj", "{DEECFCAD-1669-408F-B547-4DE31DC86E93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{79AE7A4A-27D4-4721-986E-726C7357590F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79AE7A4A-27D4-4721-986E-726C7357590F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79AE7A4A-27D4-4721-986E-726C7357590F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79AE7A4A-27D4-4721-986E-726C7357590F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0046FC9D-57E6-4430-BB73-0430723C68E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0046FC9D-57E6-4430-BB73-0430723C68E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0046FC9D-57E6-4430-BB73-0430723C68E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +31,14 @@ Global
 		{FA6FBF33-42E1-4ED6-B185-FE955CE08C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA6FBF33-42E1-4ED6-B185-FE955CE08C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA6FBF33-42E1-4ED6-B185-FE955CE08C74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E4B2EE5-F1D8-479F-901B-88D257552263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4B2EE5-F1D8-479F-901B-88D257552263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4B2EE5-F1D8-479F-901B-88D257552263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4B2EE5-F1D8-479F-901B-88D257552263}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEECFCAD-1669-408F-B547-4DE31DC86E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEECFCAD-1669-408F-B547-4DE31DC86E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEECFCAD-1669-408F-B547-4DE31DC86E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEECFCAD-1669-408F-B547-4DE31DC86E93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

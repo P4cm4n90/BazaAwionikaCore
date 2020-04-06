@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Web;
 using BazaAwionika.Model;
 using BazaAwionika.Data.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 namespace BazaAwionika.Data.Repositories
 {
@@ -18,7 +19,7 @@ namespace BazaAwionika.Data.Repositories
       //  }
         public AircraftModel GetAircraftByNumber(string aircraftNumber)
         {
-            return GetAll().SingleOrDefault(c => c.TailNumber.CompareTo(aircraftNumber) == 0) ?? throw new KeyNotFoundException("Nie ma samolotu o danym numerze");
+            return GetAll().SingleOrDefault(c => c.TailNumber.CompareTo(aircraftNumber) == 0) ?? throw new KeyNotFoundException("asd"); //TODO: dodac locale
         }
 
         public IEnumerable<AircraftModel> GetAircraftsByStatus(AircraftStatusModel aircraftStatus)

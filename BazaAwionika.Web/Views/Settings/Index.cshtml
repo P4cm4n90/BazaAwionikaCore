@@ -1,0 +1,60 @@
+﻿@model IEnumerable<BazaAwionika.Web.ViewModel.SettingsViewModel>
+
+<h2>Ustawienia</h2>
+
+<p>
+    @Html.ActionLink("Utwórz nowy", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SettingsName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightHoursCaution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightHoursWarning)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightHoursError)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DaysCaution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DaysWarning)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DaysError)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SettingsName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightHoursCaution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightHoursWarning)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlightHoursError)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DaysCaution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DaysWarning)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DaysError)
+        </td>
+    </tr>
+}
+
+</table>

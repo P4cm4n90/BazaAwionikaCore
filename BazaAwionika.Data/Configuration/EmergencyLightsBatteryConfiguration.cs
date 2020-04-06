@@ -16,6 +16,7 @@ namespace BazaAwionika.Data.Configuration
         {
             builder.Property(c => c.AdditionalInformation).IsUnicode(false).HasMaxLength(100);
             builder.Property(c => c.SerialNumber).IsUnicode(false).HasMaxLength(30);
+            builder.Property(c => c.AircraftId).IsRequired(false);
         }
     }
 }

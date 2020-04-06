@@ -1,9 +1,12 @@
 
 using System;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using System.Linq;
 using BazaAwionika.Model;
 using BazaAwionika.Data.Configuration;
+using System.Configuration;
+
 
 namespace BazaAwionika.Data
 {
@@ -15,24 +18,22 @@ namespace BazaAwionika.Data
         // 
         // If you wish to target a different database and/or database provider, modify the 'MaintenanceEntities' 
         // connection string in the application configuration file.
-        public MaintenanceEntities(DbContextOptions<MaintenanceEntities> options)
-            : base(options)
+        public MaintenanceEntities()
+            : base(GetDbContextOptions())
         {
-
+            
         }
+
         public virtual void Commit()
         {
             base.SaveChanges();
         }
 
-        private DbContextOptions dbContextOptions;
-
-        public DbContextOptions DbContextOptions
+        private static DbContextOptions GetDbContextOptions() 
         {
-            get
-            {
-                return new Dbc
-            }
+            var optionsBuilder = new DbContextOptionsBuilder<MaintenanceEntities>();
+            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["MaintenanceEntities"].ConnectionString);
+            return optionsBuilder.Options;
         }
 
         public virtual DbSet<AircraftModel> Aircraft { get; set; }
@@ -66,22 +67,34 @@ namespace BazaAwionika.Data
         public virtual DbSet<UlbTestModel> UlbTest { get; set; }
         public virtual DbSet<UserModel> Users { get; set; }
 
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration<AircraftModel>(new AircraftConfiguration());
-            modelBuilder.Properties<string>().Configure(x => x.HasColumnType("VARCHAR"));
-            modelBuilder.Configurations.Add(new AircraftConfiguration());
-            modelBuilder.Configurations.Add(new UserConfiguration());
-            modelBuilder.Configurations.Add(new SettingsConfiguration());
-            modelBuilder.Configurations.Add(new AircraftStatusConfiguration());
-            modelBuilder.Configurations.Add(new AlternatorConfiguration());
-            modelBuilder.Configurations.Add(new OxygenCylinderMainConfiguration());
-            modelBuilder.Configurations.Add(new OxygenCylinderPortableConfiguration());
-            modelBuilder.Configurations.Add(new GeneratorConfiguration());
-            modelBuilder.Configurations.Add(new EgpwsDatabaseConfiguration());
-            modelBuilder.Configurations.Add(new CountryConfiguration());
-            modelBuilder.Configurations.Add(new FlightConfiguration());
-            //modelBuilder.Configurations.Add()
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new SettingsConfiguration());
+            modelBuilder.ApplyConfiguration(new AircraftStatusConfiguration());
+            modelBuilder.ApplyConfiguration(new AircraftMaintenanceConfiguration());
+            modelBuilder.ApplyConfiguration(new AircraftBiuletinConfiguration());
+            modelBuilder.ApplyConfiguration(new AircraftConfiguration());
+            modelBuilder.ApplyConfiguration(new AlternatorConfiguration());
+            modelBuilder.ApplyConfiguration(new BatteryConfiguration());
+            modelBuilder.ApplyConfiguration(new CountryConfiguration());
+            modelBuilder.ApplyConfiguration(new EgpwsDatabaseConfiguration());
+            modelBuilder.ApplyConfiguration(new EmergencyLightsBatteryConfiguration());
+            modelBuilder.ApplyConfiguration(new FdrReadConfiguration());
+            modelBuilder.ApplyConfiguration(new FlightConfiguration());
+            modelBuilder.ApplyConfiguration(new GeneratorConfiguration());
+            modelBuilder.ApplyConfiguration(new OxygenCylinderMainConfiguration());
+            modelBuilder.ApplyConfiguration(new OxygenCylinderPortableConfiguration());
+            modelBuilder.ApplyConfiguration(new OxygenExchangeConfiguration());
+            modelBuilder.ApplyConfiguration(new MagneticCompassDeviationConfiguration());
+            modelBuilder.ApplyConfiguration(new PbeConfiguration());
+            modelBuilder.ApplyConfiguration(new SettingsConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+ 
+
 
 
 

@@ -39,7 +39,7 @@ namespace BazaAwionika.Model
         [ForeignKey("AircraftId")]
         public virtual AircraftModel Aircraft { get; set; }
         [ForeignKey("UserId")]
-        public virtual UserModel Users { get; set; }
+        public virtual UserModel User{ get; set; }
 
         //publi
 

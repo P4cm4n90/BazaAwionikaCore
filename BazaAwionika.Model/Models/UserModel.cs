@@ -42,9 +42,17 @@ namespace BazaAwionika.Model
 
         public virtual ICollection<AircraftModel> Aircrafts { get; set; }
 
+        public virtual ICollection<AircraftBiuletinModel> AircraftBiuletins { get; set; }
+
+        public virtual ICollection<AircraftMaintenanceModel> AircraftMaintenances { get; set; }
+
+        public virtual ICollection <AircraftStatusModel> AircraftStatuses { get; set; }
+
         public virtual ICollection<AlternatorModel> Alternators { get; set; }
 
         public virtual ICollection<BatteryModel> Batteries { get; set; }
+
+        public virtual ICollection<CountryModel> Countries { get; set; }
         public virtual ICollection<EgpwsDatabaseModel> EgpwsDatabase { get; set; }
 
         public virtual ICollection<EltFunctionalTestModel> EltFunctionalTest { get; set; }
@@ -54,6 +62,8 @@ namespace BazaAwionika.Model
         public virtual ICollection<EmergencyLightsBatteryModel> EmergencyLightsBatteries { get; set; }
 
         public virtual ICollection<FdrReadModel> FdrRead { get; set; }
+
+        public virtual ICollection<FlightModel> Flights { get; set; }
 
         public virtual ICollection<GeneratorModel> Generators { get; set; }
 

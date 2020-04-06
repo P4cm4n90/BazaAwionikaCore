@@ -1,0 +1,16 @@
+﻿@model IEnumerable<BazaAwionika.Web.ViewModel.AircraftSmallViewModel>
+
+
+@{
+    ViewBag.Title = "Samoloty";
+}
+
+
+
+    <div class="navbar">
+        @foreach (BazaAwionika.Web.ViewModel.AircraftSmallViewModel item in Model)
+        {
+            <a href="#"><i class="fa fa-fw fa-plane"></i> @item.TailNumber<br>@item.FlightHours FH<br>@item.AircraftStatusName</a>
+        }
+
+    </div>

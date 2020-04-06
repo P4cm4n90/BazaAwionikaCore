@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
+using Microsoft.EntityFrameworkCore;
 
 namespace BazaAwionika.Data.Infrastructure
 {
@@ -11,7 +11,7 @@ namespace BazaAwionika.Data.Infrastructure
     {
         #region properties
         private MaintenanceEntities dataContext;
-        private readonly IDbSet<T> dbSet;
+        private readonly DbSet<T> dbSet;
 
         protected IDbFactory DbFactory
         {

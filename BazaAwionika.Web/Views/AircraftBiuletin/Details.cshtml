@@ -1,0 +1,110 @@
+﻿@model BazaAwionika.Web.ViewModel.AircraftBiuletinViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AircraftBiuletinModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AircraftName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AircraftName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateExpiration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateExpiration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateExecution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateExecution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInformation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInformation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsRequired)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsRequired)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActual)
+        </dd>
+
+    </dl>
+</div>
+<form id="__AjaxAntiForgeryForm" action="#" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Edycja", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+        <input id="delete_btn" type="button" value="@Locale.Strings.BtnDelete" class="btn btn-default" />
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+    </div>
+</form>
+@Scripts.Render("~/bundles/jquery")
+<script type='text/javascript'>
+
+    $(document).on("click", "#delete_btn", function (e) {
+        e.preventDefault();
+        var confirmation = confirm("@Locale.Strings.DeleteConfirmation");
+        var form = $('#__AjaxAntiForgeryForm');
+        var token = $('input[name="__RequestVerificationToken"]', form).val();
+        var id = @Model.Id;
+            if (confirmation) {
+                $.ajax({
+                    url: "@Url.Action("Delete","AircraftBiuletin", new { id = Model.Id })",
+                    type: "POST",
+                    data: {
+                        __RequestVerificationToken: token,
+                        "id": id
+                        },
+                    success: function (result) {
+                        console.log("Success: ", result)
+                    },
+                    error: function (data) {
+                        console.log("ERROR: ", data)
+                    }
+                });
+            }
+        })
+
+
+</script>

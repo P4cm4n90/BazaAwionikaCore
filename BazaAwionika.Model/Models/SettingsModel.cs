@@ -34,8 +34,6 @@ namespace BazaAwionika.Model
         [Display(Name = "Dni przekroczenie")]
         public short? DaysError { get; set; }
 
-        public int? UserId { get; set; }
-
         [Display(Name = "Data modyfikacji")]
         [Column(TypeName = "smalldatetime")]
         [DisplayFormat(DataFormatString = "{0:hh.mm dd.MM.yyyy}", ApplyFormatInEditMode = true)]
@@ -86,7 +84,9 @@ namespace BazaAwionika.Model
 
         public virtual ICollection<UlbTestModel> UlbTest { get; set; }
 
+        public int? UserId { get; set; }
+
         [ForeignKey("UserId")]
-        public virtual UserModel Users { get; set; }
+        public virtual UserModel User { get; set; }
     }
 }

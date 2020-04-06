@@ -1,0 +1,77 @@
+﻿@model BazaAwionika.Web.ViewModel.MagneticCompassDeviationViewModel
+
+@{
+    ViewBag.Title = "Detale";
+}
+
+<h2>Szczegóły</h2>
+
+<div>
+    <div class="w3-row">
+        <div class="w3-col w3-container m4 l3">
+            <dl class="dl-horizontal">
+
+                <dt> @Html.DisplayNameFor(model => model.AircraftName)</dt>
+                <dd> @Html.DisplayFor(model => model.AircraftName) </dd>
+                <dt>@Html.DisplayNameFor(model => model.IsActual)</dt>
+                <dd> @Html.DisplayFor(model => model.IsActual)</dd>
+                <dt> @Html.DisplayNameFor(model => model.UserName)</dt>
+                <dd> @Html.DisplayFor(model => model.UserName)</dd>
+                <dt> @Html.DisplayNameFor(model => model.DateAdd)</dt>
+                <dd>@Html.DisplayFor(model => model.DateAdd)</dd>
+            </dl>
+        </div>
+        <div class="w3-col w3-container m8 l9">
+            <dl class="dl-horizontal">
+                <dt>@Html.DisplayNameFor(model => model.DateExecution)</dt>
+                <dd> @Html.DisplayFor(model => model.DateExecution)</dd>
+                <dt>@Html.DisplayNameFor(model => model.DaysRemaining)</dt>
+                <dd> @Html.DisplayFor(model => model.DaysRemaining)</dd>
+                <dt>@Html.DisplayNameFor(model => model.DateExpiration)</dt>
+                <dd> @Html.DisplayFor(model => model.DateExpiration)</dd>
+
+            </dl>
+        </div>
+    </div>
+
+
+</div>
+<form id="__AjaxAntiForgeryForm" action="#" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Edycja", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+        <input id="delete_btn" type="button" value="@Locale.Strings.BtnDelete" class="btn btn-default" />
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+    </div>
+</form>
+@Scripts.Render("~/bundles/jquery")
+<script type='text/javascript'>
+
+    $(document).on("click", "#delete_btn", function (e) {
+        e.preventDefault();
+        var confirmation = confirm("@Locale.Strings.DeleteConfirmation");
+        var form = $('#__AjaxAntiForgeryForm');
+        var token = $('input[name="__RequestVerificationToken"]', form).val();
+        var id = @Model.Id;
+            if (confirmation) {
+                $.ajax({
+                    url: "@Url.Action("Delete","MagneticCompassDeviation", new { id = Model.Id })",
+                    type: "POST",
+                    data: {
+                        __RequestVerificationToken: token,
+                        "id": id
+                        },
+                    success: function (result) {
+                        console.log("Success: ", result)
+                    },
+                    error: function (data) {
+                        console.log("ERROR: ", data)
+                    }
+                });
+            }
+        })
+
+
+</script>

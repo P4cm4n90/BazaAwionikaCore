@@ -17,5 +17,10 @@ namespace BazaAwionika.Model
         public string Name { get; set; }
 
         public virtual ICollection<AircraftModel> Aircrafts { get; set; }
+
+        public int UserId { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual UserModel User { get; set; }
     }
 }

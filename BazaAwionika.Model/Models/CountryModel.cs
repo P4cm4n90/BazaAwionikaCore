@@ -20,7 +20,12 @@ namespace BazaAwionika.Model
 
         public int GipsenDatabaseId { get; set; }
 
+        public int UserId { get; set; }
+
         [ForeignKey("GipsenDatabaseId")]
         public virtual GipsenDatabaseModel GipsenDatabase { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual UserModel User { get; set; }
     }
 }

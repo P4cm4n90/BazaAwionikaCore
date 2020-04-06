@@ -14,7 +14,7 @@ namespace BazaAwionika.Data.Configuration
 
         public void Configure(EntityTypeBuilder<EltOperationalTestModel> builder)
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
         }
     }
 }

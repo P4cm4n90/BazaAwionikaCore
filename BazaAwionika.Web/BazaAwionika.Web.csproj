@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>BazaAwionika.Web</AssemblyName>
+    <RootNamespace>BazaAwionika.Web</RootNamespace>
+    <PackageId>BazaAwionika.Web</PackageId>
+    <Authors>BazaAwionika.Web</Authors>
+    <Product>BazaAwionika.Web</Product>
+    <Company>BazaAwionika.Web</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BazaAwionika.Data\BazaAwionika.Data.csproj" />
+    <ProjectReference Include="..\BazaAwionika.Model\BazaAwionika.Model.csproj" />
+    <ProjectReference Include="..\BazaAwionika.Service\BazaAwionika.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="rozne\BazaAwionika.Web.csproj" />
+    <None Include="rozne\BazaAwionika.Web.csproj.user" />
+  </ItemGroup>
+
+
+
+</Project>
