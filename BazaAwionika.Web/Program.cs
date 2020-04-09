@@ -20,7 +20,16 @@ namespace BazaAwionika.Web
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder
+                      .UseStartup<Startup>()
+                      .ConfigureLogging((hostingContext, builder) =>
+                      {
+                          builder.ClearProviders();
+                          builder.SetMinimumLevel(LogLevel.Trace);
+                          builder.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
+                          builder.AddConsole();
+                          builder.AddDebug();
+                      });
                 });
     }
 }

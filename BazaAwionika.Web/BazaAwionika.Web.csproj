@@ -11,6 +11,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\site.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\bootstrap-theme.css" />
+    <None Include="wwwroot\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\css\bootstrap-theme.min.css" />
+    <None Include="wwwroot\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\css\font-awesome.css" />
+    <None Include="wwwroot\css\font-awesome.min.css" />
+    <None Include="wwwroot\css\site.css" />
+    <None Include="wwwroot\css\w3.css" />
+    <None Include="wwwroot\js\DropDownButton.js" />
+    <None Include="wwwroot\js\modernizr-2.8.3.js" />
+    <None Include="wwwroot\js\tether.js" />
+    <None Include="wwwroot\js\tether.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
@@ -19,11 +39,6 @@
     <ProjectReference Include="..\BazaAwionika.Data\BazaAwionika.Data.csproj" />
     <ProjectReference Include="..\BazaAwionika.Model\BazaAwionika.Model.csproj" />
     <ProjectReference Include="..\BazaAwionika.Service\BazaAwionika.Service.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="rozne\BazaAwionika.Web.csproj" />
-    <None Include="rozne\BazaAwionika.Web.csproj.user" />
   </ItemGroup>
 
 

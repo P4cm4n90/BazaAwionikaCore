@@ -42,8 +42,8 @@
         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
     </div>
 </form>
-@Scripts.Render("~/bundles/jquery")
-<script type='text/javascript'>
+<script type='text/javascript' src="~/lib/jquery/dist/jquery.js">
+
 
     $(document).on("click", "#delete_btn", function (e) {
         e.preventDefault();

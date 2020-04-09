@@ -10,9 +10,9 @@
 
 
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @RenderSection("styles", false);
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+          @RenderSection("styles", false) ;
 </head>
 <body>
     <div class="tab">
@@ -25,8 +25,8 @@
     @RenderBody()
 
     <hr />
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
+    <script type='text/javascript' src="~/lib/bootstrap/disc/js/bootstrap.js"> </script>
     @RenderSection("scripts", required: false)
 
 </body>

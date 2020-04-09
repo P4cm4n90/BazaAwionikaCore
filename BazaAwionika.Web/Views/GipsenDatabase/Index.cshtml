@@ -31,8 +31,8 @@
 </div>
 
     @section scripts{
-        @Scripts.Render("~/bundles/jquery")
-        <script type='text/javascript'>
+        <script type='text/javascript' src="~/lib/jquery/dist/jquery.js">
+        
         $(".kliki").on("click", function () {
             var itemId = $(this).data('id');
             $.ajax({

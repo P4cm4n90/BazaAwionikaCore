@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using BazaAwionika.Model;
@@ -8,14 +8,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BazaAwionika.Data
 {
-    public class GenerateData
+    public static class GenerateData
     {
-        public void Generate(MaintenanceEntities context)
+        public static void Generate(MaintenanceEntities context)
         {
             GetAircrafts().ForEach(c => context.Aircraft.Add(c));
             GetAircraftStatuses().ForEach(c => context.AircraftStatuses.Add(c));
             GetSettings().ForEach(c => context.Settings.Add(c));
-            context.Commit();
             GetAlternators().ForEach(c => context.Alternators.Add(c));
             GetGenerators().ForEach(c => context.Generators.Add(c));
             GetBatteries().ForEach(c => context.Batteries.Add(c));
@@ -104,56 +103,57 @@ namespace BazaAwionika.Data
                     TailNumber="011",
                     SerialNumber="009",
                     FlightHours=5173,
-                    DateAdd=DateTime.Parse("2019-06-04")
+                    DateAdd=DateTime.Parse("2019-06-04",CultureInfo.CreateSpecificCulture("pl-PL"))
+                    
                 },
                 new AircraftModel
                 {
                     TailNumber="012",
                     SerialNumber="010",
                     FlightHours=4973,
-                    DateAdd=DateTime.Parse("2019-06-04")
+                    DateAdd=DateTime.Parse("2019-06-04",CultureInfo.CreateSpecificCulture("pl-PL"))
                 },
                  new AircraftModel
                 {
                     TailNumber="013",
                     SerialNumber="013",
                     FlightHours=4473,
-                    DateAdd=DateTime.Parse("2019-06-04")
+                    DateAdd=DateTime.Parse("2019-06-04",CultureInfo.CreateSpecificCulture("pl-PL"))
                 },
                 new AircraftModel
                 {
                     TailNumber="014",
                     SerialNumber="014",
                     FlightHours=4473,
-                    DateAdd=DateTime.Parse("2019-06-04")
+                    DateAdd=DateTime.Parse("2019-06-04",CultureInfo.CreateSpecificCulture("pl-PL"))
                 },
                 new AircraftModel
                 {
                     TailNumber="015",
                     SerialNumber="015",
                     FlightHours=4473,
-                    DateAdd=DateTime.Parse("2019-06-04")
+                    DateAdd=DateTime.Parse("2019-06-04",CultureInfo.CreateSpecificCulture("pl-PL"))
                 },
                 new AircraftModel
                 {
                     TailNumber="016",
                     SerialNumber="018",
                     FlightHours=4783,
-                    DateAdd=DateTime.Parse("2019-06-04")
+                    DateAdd=DateTime.Parse("2019-06-04",CultureInfo.CreateSpecificCulture("pl-PL"))
                 },
                  new AircraftModel
                 {
                     TailNumber="017",
                     SerialNumber="019",
                     FlightHours=4882,
-                    DateAdd=DateTime.Parse("2019-06-04")
+                    DateAdd=DateTime.Parse("2019-06-04",CultureInfo.CreateSpecificCulture("pl-PL"))
                 },
                  new AircraftModel
                 {
                     TailNumber="018",
                     SerialNumber="020",
                     FlightHours=4473,
-                    DateAdd=DateTime.Parse("2019-06-04")
+                    DateAdd=DateTime.Parse("2019-06-04",CultureInfo.CreateSpecificCulture("pl-PL"))
                 },
             };
         }

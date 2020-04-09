@@ -1,71 +1,244 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿body {
+    padding-top: 80px;
+    padding-bottom: 20px;
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
 }
 
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+@media (max-width: 979px) {
+    body {
+        padding-top: 10px;
+    }
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 12px; /* Increased text to enable scrolling */
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+.ok {
+    background-color: green;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.caution {
+    background-color: yellow;
 }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+.warning {
+    background-color: orange;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
+.error {
+    background-color: red;
 }
 
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+.tablenormal thead tr th div, .vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+
+.tablenormal {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    
+    box-sizing: border-box; /* causes item size to include border and padding */
+    -moz-box-sizing: border-box;
+    width: 100%;
+}
+
+.tablenormal td, #tablenormal th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tablenormal tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tablenormal tr:hover {
+    background-color: #ddd;
+}
+
+.tablenormal th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 5px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+dl {
+    flex-wrap: wrap;
+}
+
+dt {
+    width: 33%;
+}
+
+dd {
+    margin-left: auto;
+    width: 66%;
+}
+
+.dl-horizontal dt, dd {
+    background-color: #f5f5ef;
+}
+
+    .dl-horizontal dt:nth-child(4n+1), dt:nth-child(4n+1) + dd {
+        background-color: #ebebe0;
+    }
+
+
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+   padding: 6px 6px 6px 32px;
+   text-decoration: none;
+   font-size: 25px;
+   color: #818181;
+   display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+
+
+.sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+    /* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+        color: #f1f1f1;
+    }
+
+/* Main content */
+.main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 15px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: green;
+    color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    margin-left: 200px;
+}
+
+    /* Links inside the navbar */
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        /* Change background on mouse-over */
+        .navbar a:hover {
+            background: #ddd;
+            color: black;
+        }
+
+.container body-content {
+    margin-top: 100px;
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 15px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+
+#triple_column
+* {
+    box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+#triple_column .column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+}
+
+/* Clear floats after the columns */
+#triple_column .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#itemDetails {
+    padding-top: 15px
 }

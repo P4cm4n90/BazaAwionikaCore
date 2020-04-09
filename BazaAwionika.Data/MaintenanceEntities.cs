@@ -6,7 +6,8 @@ using System.Linq;
 using BazaAwionika.Model;
 using BazaAwionika.Data.Configuration;
 using System.Configuration;
-
+using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace BazaAwionika.Data
 {
@@ -21,7 +22,15 @@ namespace BazaAwionika.Data
         public MaintenanceEntities()
             : base(GetDbContextOptions())
         {
-            
+            RelationalDatabaseCreator databaseCreator =
+    (RelationalDatabaseCreator)Database.GetService<IDatabaseCreator>();
+            if (!databaseCreator.Exists())
+            {
+                databaseCreator.CreateTables();
+                if (!databaseCreator.HasTables())
+                    GenerateData.Generate(this);
+            }
+           
         }
 
         public virtual void Commit()

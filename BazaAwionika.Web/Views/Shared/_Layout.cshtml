@@ -1,5 +1,6 @@
 ﻿@section styles{
-    <link rel="Stylesheet" href="@Href("~/Content/Site.css")" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
 }
 
 <!DOCTYPE html>
@@ -10,15 +11,14 @@
 
 
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
     @RenderSection("styles", false);
 </head>
 
 
 
 <body>
-    @Html.Action("AircraftList", "Home")
+    @await Component.InvokeAsync("AircraftList");
+
     <div class="sidenav">
         @Html.ActionLink("Strona główna", "Index", "Home")
         @Html.ActionLink("Samoloty", "Index", "Aircrafts")
@@ -68,9 +68,8 @@
             <p>© @DateTime.Now Dzisiejsza data </p>
         </footer>
     </div>
-    @Scripts.Render("~/bundles/other")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
+    <script type='text/javascript' src="~/lib/bootstrap/disc/js/bootstrap.js"></script>
     @RenderSection("scripts", required: false)
 
 </body>
