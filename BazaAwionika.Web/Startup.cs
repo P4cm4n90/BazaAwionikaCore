@@ -35,9 +35,9 @@ namespace BazaAwionika.Web
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<MaintenanceEntities>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MaintenanceEntities")));
-
+         //   services.AddDbContext<MaintenanceEntities>(options =>
+          //          options.UseSqlServer(Configuration.GetConnectionString("MaintenanceEntities")));
+            services.AddHttpContextAccessor();
             services.AddControllersWithViews();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();

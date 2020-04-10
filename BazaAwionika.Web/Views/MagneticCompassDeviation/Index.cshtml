@@ -1,4 +1,5 @@
-﻿@model BazaAwionika.Web.ViewModel.MagneticCompassDeviationViewModel
+﻿@using BazaAwionika.Web.ViewModel;
+@model IEnumerable<MagneticCompassDeviationViewModel>
 
 @{
     ViewBag.Title = "Dewiacja busoli magnetycznej";
@@ -14,6 +15,7 @@
         <th>@Html.DisplayNameFor(model => model.DaysRemaining)</th>
         <th>@Html.DisplayNameFor(model => model.DateExpiration)</th>
     </tr>
+    
     @foreach (var item in Model)
     {
         <tr class="kliki" data-id="@item.Id">

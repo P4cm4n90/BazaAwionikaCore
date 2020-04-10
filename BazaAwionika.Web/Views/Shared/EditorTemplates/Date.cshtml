@@ -1,4 +1,6 @@
-﻿@model DateTime?
+﻿@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Routing;
+@model DateTime?
 @{
     IDictionary<string, object> htmlAttributes;
     object objAttributes;
@@ -11,6 +13,8 @@
         htmlAttributes = new RouteValueDictionary();
     }
     htmlAttributes.Add("type", "date");
-    String format = (Request.UserAgent != null && Request.UserAgent.Contains("Chrome")) ? "{0:yyyy-MM-dd}" : "{0:d}";
+    string userAgent = Context.Request.Headers["User-Agent"];
+    bool isEmpty = String.IsNullOrEmpty(userAgent);
+    String format = ((!isEmpty) && userAgent.Contains("Chrome")) ? "{0:yyyy-MM-dd}" : "{0:d}";
     @Html.TextBox("", Model, format, htmlAttributes)
 }

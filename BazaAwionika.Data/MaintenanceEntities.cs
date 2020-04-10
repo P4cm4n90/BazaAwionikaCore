@@ -22,13 +22,14 @@ namespace BazaAwionika.Data
         public MaintenanceEntities()
             : base(GetDbContextOptions())
         {
+            
             RelationalDatabaseCreator databaseCreator =
     (RelationalDatabaseCreator)Database.GetService<IDatabaseCreator>();
             if (!databaseCreator.Exists())
             {
+                databaseCreator.Create();
                 databaseCreator.CreateTables();
-                if (!databaseCreator.HasTables())
-                    GenerateData.Generate(this);
+                GenerateData.Generate(this);
             }
            
         }
@@ -40,7 +41,10 @@ namespace BazaAwionika.Data
 
         private static DbContextOptions GetDbContextOptions() 
         {
+
+
             var optionsBuilder = new DbContextOptionsBuilder<MaintenanceEntities>();
+
             optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["MaintenanceEntities"].ConnectionString);
             return optionsBuilder.Options;
         }
@@ -76,11 +80,10 @@ namespace BazaAwionika.Data
         public virtual DbSet<UlbTestModel> UlbTest { get; set; }
         public virtual DbSet<UserModel> Users { get; set; }
 
-
-
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1062:Waliduj argumenty metod publicznych", Justification = "<Oczekuj¹ce>")]
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration<AircraftModel>(new AircraftConfiguration());
+            _ = modelBuilder.ApplyConfiguration(new AircraftConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new SettingsConfiguration());
             modelBuilder.ApplyConfiguration(new AircraftStatusConfiguration());
