@@ -1,60 +1,58 @@
 ﻿@model BazaAwionika.Web.ViewModel.UserViewModel
 
-    <div>
+<div>
 
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.LastName)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.LastName)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.FirstName)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.AdditionalInformation)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalInformation)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.AdditionalInformation)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalInformation)
+        </dd>
 
-            <dd>
-                @Html.DisplayFor(model => model.AdminPriviliges)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.AdminPriviliges)
+        </dd>
 
-        </dl>
+    </dl>
+</div>
+<form id="__AjaxAntiForgeryForm" action="#" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Edycja", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+        <input id="delete_btn" type="button" value="@Locale.Strings.BtnDelete" class="btn btn-default" />
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
     </div>
-    <form id="__AjaxAntiForgeryForm" action="#" method="post">
-
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            @Html.ActionLink("Edycja", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
-            <input id="delete_btn" type="button" value="@Locale.Strings.BtnDelete" class="btn btn-default" />
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
-        </div>
-    </form>
-    
-    <script type='text/javascript' src="~/lib/bundle.js"> 
-
-    $(document).on("click", "#delete_btn", function (e) {
+</form>
+    <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"> </script>
+    <script type="text/javascript">
         e.preventDefault();
         var confirmation = confirm("@Locale.Strings.DeleteConfirmation");
         var form = $('#__AjaxAntiForgeryForm');
@@ -79,5 +77,5 @@
         })
 
 
-    </script>
+</script>
 

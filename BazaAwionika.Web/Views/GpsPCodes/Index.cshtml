@@ -7,29 +7,30 @@
 <p>
     @Html.ActionLink("Utwórz nowy", "Create")
 </p>
-    <table id="main-table" class="tablenormal">
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.AircraftName)</th>
-            <th>@Html.DisplayNameFor(model => model.DaysRemaining)</th>
-            <th>@Html.DisplayNameFor(model => model.DateExpiration)</th>
-        </tr>
-                  @foreach (var item in Model)
-                  {
+<table id="main-table" class="tablenormal">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.AircraftName)</th>
+        <th>@Html.DisplayNameFor(model => model.DaysRemaining)</th>
+        <th>@Html.DisplayNameFor(model => model.DateExpiration)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
         <tr class="kliki" data-id="@item.Id">
             <td>@Html.DisplayFor(modelItem => item.AircraftName) </td>
             <td>@Html.DisplayFor(modelItem => item.DaysRemaining)</td>
             <td>@Html.DisplayFor(modelItem => item.DateExpiration)</td>
         </tr>
-                  }
-              </table>
-         
+    }
+</table>
+
 
 <div id="itemDetails">
 </div>
 
-    @section scripts{
-        <script type='text/javascript' src="~/lib/jquery/dist/jquery.js">
-        
+@section scripts{
+    <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
+
         $(".kliki").on("click", function () {
             var itemId = $(this).data('id');
             $.ajax({
@@ -47,5 +48,5 @@
             })
         });
 
-        </script>
-    }
+    </script>
+}

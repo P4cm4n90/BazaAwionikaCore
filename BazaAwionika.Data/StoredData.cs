@@ -15,6 +15,7 @@ namespace BazaAwionika.Data
             GetAircrafts().ForEach(c => context.Aircraft.Add(c));
             GetAircraftStatuses().ForEach(c => context.AircraftStatuses.Add(c));
             GetSettings().ForEach(c => context.Settings.Add(c));
+            context.Commit();
             GetAlternators().ForEach(c => context.Alternators.Add(c));
             GetGenerators().ForEach(c => context.Generators.Add(c));
             GetBatteries().ForEach(c => context.Batteries.Add(c));

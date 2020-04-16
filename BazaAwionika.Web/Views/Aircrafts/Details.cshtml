@@ -4,37 +4,47 @@
 @{
     ViewBag.Title = "Szczegóły";
 }
+
+
 <div class="w3-row">
     <div class="w3-col w3-container m4 l3">
-        <dl class="dl-horizontal">
+        <table class="w3-table-all">
 
-            <dt>@Html.DisplayNameFor(model => model.TailNumber)</dt>
-            <dd>@Html.DisplayFor(model => model.TailNumber)</dd>
-            <dt>@Html.DisplayNameFor(model => model.SerialNumber)</dt>
-            <dd>@Html.DisplayFor(model => model.SerialNumber)</dd>
-            <dt>@Html.DisplayNameFor(model => model.FlightHours) </dt>
-            <dd>@Html.DisplayFor(model => model.FlightHours)</dd>
-            <dt>@Html.DisplayNameFor(model => model.DateFlightHours)</dt>
-            <dd>@Html.DisplayFor(model => model.DateFlightHours)</dd>
-            <dt>@Html.DisplayNameFor(model => model.AdditionalInfo)</dt>
-            <dd>@Html.DisplayFor(model => model.AdditionalInfo)</dd>
-            <dt>@Html.DisplayNameFor(model => model.DateAdd)</dt>
-            <dd>@Html.DisplayFor(model => model.DateAdd)</dd>
+            <tr><td>@Html.DisplayNameFor(model => model.TailNumber)</td>
+                <td>@Html.DisplayFor(model => model.TailNumber)</td></tr>
+            <tr><td>@Html.DisplayNameFor(model => model.SerialNumber)</td>
+                <td>@Html.DisplayFor(model => model.SerialNumber)</td></tr>
+            <tr><td>@Html.DisplayNameFor(model => model.FlightHours) </td>
+                <td>@Html.DisplayFor(model => model.FlightHours)</td></tr>
+            <tr><td>@Html.DisplayNameFor(model => model.DateFlightHours)</td>
+                <td>@Html.DisplayFor(model => model.DateFlightHours)</td></tr>
+            <tr><td>@Html.DisplayNameFor(model => model.AdditionalInfo)</td>
+                <td>@Html.DisplayFor(model => model.AdditionalInfo)</td></tr>
+            <tr><td>@Html.DisplayNameFor(model => model.DateAdd)</td>
+                <td>@Html.DisplayFor(model => model.DateAdd)</td></tr>
 
-        </dl>
-    </div>
+           </table>
+</div>
     <div class="w3-col w3-container m8 l9">
-        <dl class="dl-horizontal">
-            <dt>@Html.DisplayNameFor(model => model.AircraftStatusName)</dt>
-            <dd> @Html.DisplayFor(model => model.AircraftStatusName)</dd>
-            <dt>@Html.DisplayNameFor(model => model.AircraftLocationName)</dt>
-            <dd> @Html.DisplayFor(model => model.AircraftLocationName)</dd>
-            <dt>@Html.DisplayNameFor(model => model.DateStart)</dt>
-            <dd> @Html.DisplayFor(model => model.DateStart)</dd>
-            <dt>@Html.DisplayNameFor(model => model.DateEnd)</dt>
-            <dd> @Html.DisplayFor(model => model.DateEnd)</dd>
-        </dl>
-    </div>
+        <table class="w3-table-all">
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.AircraftStatusName)</td>
+                <td>@Html.DisplayFor(model => model.AircraftStatusName)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.AircraftLocationName)</td>
+                <td>@Html.DisplayFor(model => model.AircraftLocationName)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.DateStart) </td>
+                <td>@Html.DisplayFor(model => model.DateStart)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.DateEnd)</td>
+                <td>@Html.DisplayFor(model => model.DateEnd)</td>
+            </tr>
+        </table>
+</div>
 </div>
 <form id="__AjaxAntiForgeryForm" action="#" method="post">
 
@@ -46,7 +56,8 @@
         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
     </div>
 </form>
-<script type='text/javascript' src="~/lib/jquery/dist/jquery.js">
+<script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
 
 
     $(document).on("click", "#delete_btn", function (e) {

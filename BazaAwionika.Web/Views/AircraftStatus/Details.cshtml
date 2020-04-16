@@ -5,20 +5,17 @@
 }
 
 
-<div>
 
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+                <table class="w3-table-all">
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.Name)</td>
+                        <td>@Html.DisplayFor(model => model.Name)</td>
+                    </tr>
+                    <tr>
 
-
-    </dl>
-</div>
+                </table>
+    
 <form id="__AjaxAntiForgeryForm" action="#" method="post">
 
     @Html.AntiForgeryToken()
@@ -29,7 +26,8 @@
         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
     </div>
 </form>
-<script type='text/javascript' src="~/lib/jquery/dist/jquery.js">
+<script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
 
 
     $(document).on("click", "#delete_btn", function (e) {

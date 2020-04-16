@@ -96,12 +96,12 @@ dd {
     width: 66%;
 }
 
-.dl-horizontal dt, dd {
-    background-color: #f5f5ef;
+.row dt, dd {
+    background-color: #a1a1a1;
 }
 
-    .dl-horizontal dt:nth-child(4n+1), dt:nth-child(4n+1) + dd {
-        background-color: #ebebe0;
+    .row dt:nth-child(4n+1), dt:nth-child(4n+1) + dd {
+        background-color: #ffffff;
     }
 
 
@@ -241,4 +241,8 @@ dd {
 
 #itemDetails {
     padding-top: 15px
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }

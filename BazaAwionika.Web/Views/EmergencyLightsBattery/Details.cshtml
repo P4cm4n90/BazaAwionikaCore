@@ -34,18 +34,19 @@
         </div>
     </div>
 </div>
-    <form id="__AjaxAntiForgeryForm" action="#" method="post">
+<form id="__AjaxAntiForgeryForm" action="#" method="post">
 
-        @Html.AntiForgeryToken()
+    @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            @Html.ActionLink("Edycja", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
-            <input id="delete_btn" type="button" value="@Locale.Strings.BtnDelete" class="btn btn-default" />
-            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
-        </div>
-    </form>
-    <script type='text/javascript' src="~/lib/jquery/dist/jquery.js">
-    
+    <div class="form-actions no-color">
+        @Html.ActionLink("Edycja", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+        <input id="delete_btn" type="button" value="@Locale.Strings.BtnDelete" class="btn btn-default" />
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+    </div>
+</form>
+<script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript">
+
 
     $(document).on("click", "#delete_btn", function (e) {
         e.preventDefault();
@@ -72,4 +73,4 @@
         })
 
 
-    </script>
+</script>

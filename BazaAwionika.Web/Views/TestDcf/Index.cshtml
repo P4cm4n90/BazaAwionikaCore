@@ -24,13 +24,14 @@
         </tr>
     }
 </table>
-         
+
 
 <div id="itemDetails">
 </div>
 
-    @section scripts{
-<script type='text/javascript' src="~/lib/jquery/dist/jquery.js">
+@section scripts{
+    <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
         $(".kliki").on("click", function () {
             var itemId = $(this).data('id');
             $.ajax({
@@ -48,5 +49,5 @@
             })
         });
 
-        </script>
-    }
+    </script>
+}
