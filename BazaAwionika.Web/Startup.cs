@@ -22,21 +22,18 @@ namespace BazaAwionika.Web
 {
     public class Startup
     {
+        private readonly IConfiguration Configuration;
         public Startup(IConfiguration configuration)
         {
-
-
             Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-         //   services.AddDbContext<MaintenanceEntities>(options =>
-          //          options.UseSqlServer(Configuration.GetConnectionString("MaintenanceEntities")));
+            services.AddSingleton<IConfiguration>(Configuration);
+               services.AddDbContext<MaintenanceEntities>(options =>
+                      options.UseSqlServer(Configuration.GetConnectionString("MaintenanceEntities")));
             services.AddHttpContextAccessor();
             services.AddControllersWithViews();
 
@@ -47,6 +44,7 @@ namespace BazaAwionika.Web
             services.AddScoped<IAircraftBiuletinRepository, AircraftBiuletinRepository>();
             services.AddScoped<IAircraftMaintenanceRepository, AircraftMaintenanceRepository>();
             services.AddScoped<IAircraftRepository, AircraftRepository>();
+            services.AddScoped<IAircraftStatusRepository, AircraftStatusRepository>();
             services.AddScoped<IAlternatorRepository, AlternatorRepository>();
             services.AddScoped<IBatteryRepository, BatteryRepository>();
             services.AddScoped<ICountryRepository, CountryRepository>();
@@ -80,7 +78,8 @@ namespace BazaAwionika.Web
                 services.AddScoped<IAircraftBiuletinService, AircraftBiuletinService>();
                 services.AddScoped<IAircraftMaintenanceService, AircraftMaintenanceService>();
                 services.AddScoped<IAircraftService, AircraftService>();
-                services.AddScoped<IAlternatorService, AlternatorService>();
+            services.AddScoped<IAircraftStatusService, AircraftStatusService>();
+            services.AddScoped<IAlternatorService, AlternatorService>();
                 services.AddScoped<IBatteryService, BatteryService>();
                 services.AddScoped<ICountryService, CountryService>();
                 services.AddScoped<IEgpwsDatabaseService, EgpwsDatabaseService>();
@@ -134,6 +133,7 @@ namespace BazaAwionika.Web
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            AutoMapperConfiguration.Init();
         }
 
     }

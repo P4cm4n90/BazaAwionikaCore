@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +12,11 @@ namespace BazaAwionika.Data.Infrastructure
         private readonly IDbFactory dbFactory;
         private MaintenanceEntities dbContext;
 
-        public UnitOfWork(IDbFactory dbFactory) => this.dbFactory = dbFactory;
+        public UnitOfWork(IDbFactory dbFactory)
+        {
+            this.dbFactory = dbFactory;
+
+        }
 
         public MaintenanceEntities DbContext
         {

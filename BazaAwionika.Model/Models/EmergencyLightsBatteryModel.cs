@@ -32,7 +32,7 @@ namespace BazaAwionika.Model
         [DataType(DataType.Date)]
         public DateTime? DateAdd { get; set; } = DateTime.Now;
 
-        public int AircraftId { get; set; }
+        public int? AircraftId { get; set; }
         public int? UserId { get; set; }
 
         public int? SettingsId { get; set; }

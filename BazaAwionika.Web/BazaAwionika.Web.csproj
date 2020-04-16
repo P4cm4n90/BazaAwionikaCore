@@ -11,17 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\css\site.css" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\css\bootstrap-theme.css" />
     <None Include="wwwroot\css\bootstrap-theme.css.map" />
     <None Include="wwwroot\css\bootstrap-theme.min.css" />
     <None Include="wwwroot\css\bootstrap-theme.min.css.map" />
     <None Include="wwwroot\css\font-awesome.css" />
     <None Include="wwwroot\css\font-awesome.min.css" />
-    <None Include="wwwroot\css\site.css" />
     <None Include="wwwroot\css\w3.css" />
     <None Include="wwwroot\js\DropDownButton.js" />
     <None Include="wwwroot\js\modernizr-2.8.3.js" />

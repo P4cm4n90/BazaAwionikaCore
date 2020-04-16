@@ -1,17 +1,18 @@
-﻿@section styles{
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width = device-width, initial-scale = 1.0">
 
 
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @RenderSection("styles", false);
+    <title>@ViewBag.Title Baza Awioniki C-295 </title>
+
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    @RenderSection("Styles", false);
 </head>
 
 
@@ -68,9 +69,13 @@
             <p>© @DateTime.Now Dzisiejsza data </p>
         </footer>
     </div>
-    <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
-    <script type='text/javascript' src="~/lib/bootstrap/disc/js/bootstrap.js"></script>
-    @RenderSection("scripts", required: false)
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
 
 </body>
 </html>

@@ -1,4 +1,3 @@
-
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
@@ -8,18 +7,34 @@ using BazaAwionika.Data.Configuration;
 using System.Configuration;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.Configuration;
 
 namespace BazaAwionika.Data
 {
     public class MaintenanceEntities : DbContext
     {
+        private readonly IConfiguration configuration;
         // Your context has been configured to use a 'MaintenanceEntities' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
         // 'BazaAwionika.MaintenanceEntities' database on your LocalDb instance. 
         // 
         // If you wish to target a different database and/or database provider, modify the 'MaintenanceEntities' 
         // connection string in the application configuration file.
-        public MaintenanceEntities()
+        public MaintenanceEntities(IConfiguration configuration) : 
+            base()
+        {
+            this.configuration = configuration;
+            RelationalDatabaseCreator databaseCreator =
+                 (RelationalDatabaseCreator)Database.GetService<IDatabaseCreator>();
+            if (!databaseCreator.Exists())
+            {
+                databaseCreator.Create();
+                databaseCreator.CreateTables();
+                GenerateData.Generate(this);
+            }
+
+        }
+     /*   public MaintenanceEntities()
             : base(GetDbContextOptions())
         {
             
@@ -32,22 +47,13 @@ namespace BazaAwionika.Data
                 GenerateData.Generate(this);
             }
            
-        }
+        }*/
 
         public virtual void Commit()
         {
             base.SaveChanges();
         }
 
-        private static DbContextOptions GetDbContextOptions() 
-        {
-
-
-            var optionsBuilder = new DbContextOptionsBuilder<MaintenanceEntities>();
-
-            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["MaintenanceEntities"].ConnectionString);
-            return optionsBuilder.Options;
-        }
 
         public virtual DbSet<AircraftModel> Aircraft { get; set; }
         public virtual DbSet<AircraftBiuletinModel> AircraftBiuletins { get; set; }
@@ -105,12 +111,13 @@ namespace BazaAwionika.Data
             modelBuilder.ApplyConfiguration(new PbeConfiguration());
             modelBuilder.ApplyConfiguration(new SettingsConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
- 
-
-
-
-
             //   modelBuilder.Entity<AircraftModel>().has
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
+        {
+            var conntectionString = configuration.GetConnectionString("MaintenanceEntities");
+            dbContextOptionsBuilder.UseSqlServer(conntectionString);
         }
 
         

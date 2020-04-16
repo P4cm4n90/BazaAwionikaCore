@@ -31,7 +31,7 @@ namespace BazaAwionika.Model
         [ForeignKey("SettingsId")]
         public virtual SettingsModel Settings { get; set; }
 
-        [ForeignKey("Aircraft")]
+        [ForeignKey("AircraftId")]
         public virtual AircraftModel Aircraft { get; set; }
         [ForeignKey("UserId")]
         public virtual UserModel User { get; set; }
