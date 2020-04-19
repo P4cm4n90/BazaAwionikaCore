@@ -9,6 +9,7 @@ namespace BazaAwionika.Web.Locales
     {
         public string Id = "Id";
         public string UserId = "Nr. użytkownika";
+        public string Date = "Data dzisiejsza";
         public string UserName = "Nazwa użytkownika";
         public string AircraftId = "Nr. samolotu";
         public string AircraftName = "Nr. samolotu";

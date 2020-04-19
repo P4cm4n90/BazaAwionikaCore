@@ -7,91 +7,80 @@
     ViewBag.Title = "Details";
 }
 
+        <div class="w3-row">
+            <div class="w3-col w3-container m3 l3">
+                <table class="w3-table-all">
 
-    <div class="w3-row">
-        <div class="w3-col w3-container m4 l3">
-            <table class="w3-table-all">
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.AircraftName)</td>
+                        <td>@Html.DisplayFor(model => model.AircraftName)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.SerialNumber) </td>
+                        <td>@Html.DisplayFor(model => model.SerialNumber)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.IsActual)</td>
+                        <td>@Html.DisplayFor(model => model.IsActual)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.IsInstalled)</td>
+                        <td>@Html.DisplayFor(model => model.IsInstalled)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.UserName)</td>
+                        <td>@Html.DisplayFor(model => model.UserName)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.DateAdd)</td>
+                        <td>@Html.DisplayFor(model => model.DateAdd)</td>
+                    </tr>
 
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.AircraftName)</td>
-                    <td>@Html.DisplayFor(model => model.AircraftName)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.FlightHoursOverhaul)</td>
-                    <td>@Html.DisplayFor(model => model.FlightHoursOverhaul)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.SerialNumber) </td>
-                    <td>@Html.DisplayFor(model => model.SerialNumber)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.AircraftFlightHours)</td>
-                    <td>@Html.DisplayFor(model => model.AircraftFlightHours)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.FlightHoursAircraftInstallation)</td>
-                    <td>@Html.DisplayFor(model => model.FlightHoursAircraftInstallation)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.IsActual)</td>
-                    <td>@Html.DisplayFor(model => model.IsActual)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.IsInstalled)</td>
-                    <td>@Html.DisplayFor(model => model.IsInstalled)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.UserName)</td>
-                    <td>@Html.DisplayFor(model => model.UserName)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.DateAdd)</td>
-                    <td>@Html.DisplayFor(model => model.DateAdd)</td>
-                </tr>
+                </table>
+            </div>
+            <div class="w3-col w3-container m3 l3">
+                <table class="w3-table-all">
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.FlightHoursOverhaul) </td>
+                        <td>@Html.DisplayFor(model => model.FlightHoursOverhaul)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.FlightHoursAircraftInstallation)</td>
+                        <td>@Html.DisplayFor(model => model.FlightHoursAircraftInstallation)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.AircraftFlightHours)</td>
+                        <td>@Html.DisplayFor(model => model.AircraftFlightHours)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.FlightHoursRemaining)</td>
+                        <td>@Html.DisplayFor(model => model.FlightHoursRemaining)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.DisplayNameFor(model => model.FlightHoursExpiration)</td>
+                        <td>@Html.DisplayFor(model => model.FlightHoursExpiration)</td>
+                    </tr>
 
-            </table>
+                </table>
+            </div>
+
         </div>
-        <div class="w3-col w3-container m8 l9">
-            <table class="w3-table-all">
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.FlightHoursOverhaul) </td>
-                    <td>@Html.DisplayFor(model => model.FlightHoursOverhaul)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.FlightHoursAircraftInstallation)</td>
-                    <td>@Html.DisplayFor(model => model.FlightHoursAircraftInstallation)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.AircraftFlightHours)</td>
-                    <td>@Html.DisplayFor(model => model.AircraftFlightHours)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.FlightHoursRemaining)</td>
-                    <td>@Html.DisplayFor(model => model.FlightHoursRemaining)</td>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayNameFor(model => model.FlightHoursExpiration)</td>
-                    <td>@Html.DisplayFor(model => model.FlightHoursExpiration)</td>
-                </tr>
-
-            </table>
-        </div>
-    </div>
+     
 
 
+        <form id="__AjaxAntiForgeryForm" action="#" method="post">
 
-<form id="__AjaxAntiForgeryForm" action="#" method="post">
+            @Html.AntiForgeryToken()
 
-    @Html.AntiForgeryToken()
-
-    <div class="form-actions no-color">
-        @Html.ActionLink("Edycja", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
-        <input id="delete_btn" type="button" value="@Locale.Strings.BtnDelete" class="btn btn-default" />
-        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
-    </div>
-</form>
-<script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
-<script type="text/javascript">
+            <div class="form-actions no-color">
+                @Html.ActionLink("Edycja", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
+                @Html.ActionLink("Usuń", "Delete", new { id = Model.Id }, new { @class = "btn btn-default" })
+                <input id="delete_btn" type="button" value="@Locale.Strings.BtnDelete" class="btn btn-default" />
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </form>
+        <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
+        <script type="text/javascript">
 
 
     $(document).on("click", "#delete_btn", function (e) {
@@ -119,4 +108,4 @@
         })
 
 
-</script>
+        </script>

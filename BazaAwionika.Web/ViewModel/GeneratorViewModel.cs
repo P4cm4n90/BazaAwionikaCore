@@ -79,7 +79,7 @@ namespace BazaAwionika.Web.ViewModel
             }
         }
 
-        public int FlightHoursBearingExpiration
+        public int FlightHoursBearingsExpiration
         {
             get
             {
@@ -105,11 +105,11 @@ namespace BazaAwionika.Web.ViewModel
             }
         }
 
-        public int? FlightHoursBearingRemaining
+        public int? FlightHoursBearingsRemaining
         {
             get
             {
-                return FlightHoursBearingExpiration - AircraftFlightHours;
+                return FlightHoursBearingsExpiration - AircraftFlightHours;
             }
         }
 
@@ -127,7 +127,7 @@ namespace BazaAwionika.Web.ViewModel
             {
                 if (!IsInstalled)
                     return MaintStatus.Unknown;
-                var check_list = new List<int?> { FlightHoursOverhaulRemaining, FlightHoursBearingRemaining, FlightHoursBrushesRemaining };
+                var check_list = new List<int?> { FlightHoursOverhaulRemaining, FlightHoursBearingsRemaining, FlightHoursBrushesRemaining };
                 int check = check_list.Max(c => c.Value);
                 if (check <= SettingsFlightHoursError)
                     return MaintStatus.Error;

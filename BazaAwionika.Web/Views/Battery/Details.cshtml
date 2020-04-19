@@ -5,50 +5,85 @@
 }
 
 
-<div>
     <div class="w3-row">
-        <div class="w3-col w3-container m4 l3">
-            <dl class="dl-horizontal">
+        <div class="w3-col w3-container s2 m3 l3">
+            <table class="w3-table-all">
 
-                <dt> @Html.DisplayNameFor(model => model.AircraftName)</dt>
-                <dd> @Html.DisplayFor(model => model.AircraftName) </dd>
-                <dt>@Html.DisplayNameFor(model => model.SerialNumber)</dt>
-                <dd> @Html.DisplayFor(model => model.SerialNumber)</dd>
-                <dt>@Html.DisplayNameFor(model => model.AircraftFlightHours)</dt>
-                <dd> @Html.DisplayFor(model => model.AircraftFlightHours)</dd>
-                <dt>@Html.DisplayNameFor(model => model.FlightHoursAircraftInstallation)</dt>
-                <dd> @Html.DisplayFor(model => model.FlightHoursAircraftInstallation)</dd>
-                <dt>@Html.DisplayNameFor(model => model.IsActual)</dt>
-                <dd> @Html.DisplayFor(model => model.IsActual)</dd>
-                <dt>@Html.DisplayNameFor(model => model.IsInstalled)</dt>
-                <dd> @Html.DisplayFor(model => model.IsInstalled)</dd>
-                <dt> @Html.DisplayNameFor(model => model.UserName)</dt>
-                <dd> @Html.DisplayFor(model => model.UserName)</dd>
-                <dt> @Html.DisplayNameFor(model => model.DateAdd)</dt>
-                <dd>@Html.DisplayFor(model => model.DateAdd)</dd>
-            </dl>
+                <tr>
+                    <td>@Locale.Strings.AircraftName</td>
+                    <td>@Html.DisplayFor(model => model.AircraftName)</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.SerialNumber</td>
+                    <td>@Html.DisplayFor(model => model.SerialNumber)</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.IsActual</td>
+                    <td>@Html.DisplayFor(model => model.IsActual)</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.IsInstalled</td>
+                    <td>@Html.DisplayFor(model => model.IsInstalled)</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.UserName</td>
+                    <td>@Html.DisplayFor(model => model.UserName)</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.DateAdd</td>
+                    <td>@Html.DisplayFor(model => model.DateAdd)</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.FlightHoursAircraftInstallation</td>
+                    <td>@Html.DisplayFor(model => model.FlightHoursAircraftInstallation)</td>
+                </tr>
+
+            </table>
         </div>
-        <div class="w3-col w3-container m8 l9">
-            <dl class="dl-horizontal">
-                <dt>@Html.DisplayNameFor(model => model.FlightHoursExecution)</dt>
-                <dd> @Html.DisplayFor(model => model.FlightHoursExecution)</dd>
-                <dt>@Html.DisplayNameFor(model => model.DateExecution)</dt>
-                <dd> @Html.DisplayFor(model => model.DateExecution)</dd>
-                <dt>@Html.DisplayNameFor(model => model.FlightHoursRemaining)</dt>
-                <dd> @Html.DisplayFor(model => model.FlightHoursRemaining)</dd>
-                <dt>@Html.DisplayNameFor(model => model.DaysRemaining)</dt>
-                <dd> @Html.DisplayFor(model => model.DaysRemaining)</dd>
-                <dt>@Html.DisplayNameFor(model => model.FlightHoursExpiration)</dt>
-                <dd> @Html.DisplayFor(model => model.FlightHoursExpiration)</dd>
-                <dt>@Html.DisplayNameFor(model => model.DateExpiration)</dt>
-                <dd> @Html.DisplayFor(model => model.DateExpiration)</dd>
+        <div class="w3-col w3-container s2 m3 l3">
+            <table class="w3-table-all">
+                <tr>
+                    <td>@Locale.Strings.FlightHoursExecution</td>
+                    <td>@Html.DisplayFor(model => model.FlightHoursExecution)</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.FlightHours/td>
+                    <td>@Html.DisplayFor(model => model.AircraftFlightHours)</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.FlightHoursRemaining</td>
+                    <td>@Html.DisplayFor(model => model.FlightHoursRemaining)</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.FlightHoursExpiration</td>
+                    <td>@Html.DisplayFor(model => model.FlightHoursExpiration)</td>
+                </tr>
 
-            </dl>
+            </table>
+        </div>
+        <div class="w3-col w3-container s2 m3 l3">
+            <table class="w3-table-all">
+                <tr>
+                    <td>@Locale.Strings.DateExecution</td>
+                    <td>@Html.DisplayFor(model => model.DateExecution)</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.Date</td>
+                    <td>@DateTime.Now.Date.ToString("dd.MM.yyyy")</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.DaysRemaining</td>
+                    <td>@Html.DisplayFor(model => model.DaysRemaining)</td>
+                </tr>
+                <tr>
+                    <td>@Locale.Strings.DateExpiration</td>
+                    <td>@Html.DisplayFor(model => model.DateExpiration)</td>
+                </tr>
+
+            </table>
         </div>
     </div>
 
-
-</div>
 <form id="__AjaxAntiForgeryForm" action="#" method="post">
 
     @Html.AntiForgeryToken()

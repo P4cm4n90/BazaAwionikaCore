@@ -55,7 +55,8 @@ textarea {
 .tablenormal {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    
+    display: inline-block;
+    overflow: auto;
     box-sizing: border-box; /* causes item size to include border and padding */
     -moz-box-sizing: border-box;
     width: 100%;
@@ -245,4 +246,11 @@ dd {
 
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+
+.w3-table-all
+{
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 15px
 }

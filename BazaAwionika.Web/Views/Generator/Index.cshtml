@@ -12,36 +12,31 @@
 </p>
 <table class="tablenormal">
     <tr>
-        <th> @Html.DisplayNameFor(model => model.AircraftName) </th>
-        <th> @Html.DisplayNameFor(model => model.AircraftFlightHours) </th>
-        <th>  @Html.DisplayNameFor(model => model.SerialNumber)</th>
-        <th>  @Html.DisplayNameFor(model => model.FlightHoursBrushesExpiration)</th>
-        <th>  @Html.DisplayNameFor(model => model.FlightHoursBrushesRemaining)</th>
-        <th>  @Html.DisplayNameFor(model => model.FlightHoursBearingExpiration)</th>
-        <th>  @Html.DisplayNameFor(model => model.FlightHoursBearingRemaining)</th>
-        <th>  @Html.DisplayNameFor(model => model.FlightHoursOverhaulExpiration)</th>
-        <th>  @Html.DisplayNameFor(model => model.FlightHoursOverhaulRemaining)</th>
+        <th> @Locale.Strings.AircraftName </th>
+        <th> @Locale.Strings.FlightHours </th>
+        <th>  @Locale.Strings.SerialNumber</th>
+        <th>  @Locale.Strings.FlightHoursBrushesRemaining</th>
+        <th>  @Locale.Strings.FlightHoursBearingsRemaining</th>
+        <th>  @Locale.Strings.FlightHoursOverhaulRemaining</th>
+        <th>  @Locale.Strings.FlightHoursBrushesExpiration<</th>
+        <th>  @Locale.Strings.FlightHoursBearingsExpiration<</th>
+        <th>  @Locale.Strings.FlightHoursOverhaulExpiration<</th>
 
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr class="kliki" data-id="@item.Id">
-            <td>  @Html.DisplayFor(modelItem => item.AircraftName)</td>
-            <td>  @Html.DisplayFor(modelItem => item.AircraftFlightHours)</td>
-            <td> @Html.DisplayFor(modelItem => item.SerialNumber)</td>
-            <td> @Html.DisplayFor(modelItem => item.FlightHoursBrushesExpiration) </td>
-            <td> @Html.DisplayFor(modelItem => item.FlightHoursBrushesRemaining) </td>
-            <td> @Html.DisplayFor(modelItem => item.FlightHoursBearingExpiration) </td>
-            <td> @Html.DisplayFor(modelItem => item.FlightHoursBearingRemaining) </td>
-            <td> @Html.DisplayFor(modelItem => item.FlightHoursOverhaulExpiration) </td>
-            <td> @Html.DisplayFor(modelItem => item.FlightHoursOverhaulRemaining) </td>
-            <td>
-                @Html.ActionLink("Edytuj", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Detale", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Usuń", "Delete", new { id = item.Id })
-            </td>
-        </tr>
+<tr class="kliki" data-id="@item.Id">
+    <td> @Html.DisplayFor(modelItem => item.AircraftName)</td>
+    <td> @Html.DisplayFor(modelItem => item.AircraftFlightHours)</td>
+    <td> @Html.DisplayFor(modelItem => item.SerialNumber)</td>
+    <td> @Html.DisplayFor(modelItem => item.FlightHoursBrushesRemaining) </td>
+    <td> @Html.DisplayFor(modelItem => item.FlightHoursBearingsRemaining) </td>
+    <td> @Html.DisplayFor(modelItem => item.FlightHoursOverhaulRemaining) </td>
+    <td> @Html.DisplayFor(modelItem => item.FlightHoursBrushesExpiration) </td>
+    <td> @Html.DisplayFor(modelItem => item.FlightHoursBearingsExpiration) </td>
+    <td> @Html.DisplayFor(modelItem => item.FlightHoursOverhaulExpiration) </td>
+</tr>
     }
 
 </table>

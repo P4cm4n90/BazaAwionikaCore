@@ -12,6 +12,8 @@ namespace BazaAwionika.Web.ViewModel
         
         public int Id { get; set; }
         [Display(Name = "Wykonanie cyklu")]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime DateExecution { get; set; }
         [Display(Name = "Wykonanie cyklu")]
         public int FlightHoursExecution { get; set; }
@@ -76,6 +78,8 @@ namespace BazaAwionika.Web.ViewModel
             }
         }
         [Display(Name = "Nastêpny cykl")]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime DateExpiration
         {
             get
