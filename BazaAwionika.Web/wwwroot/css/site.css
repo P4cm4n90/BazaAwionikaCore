@@ -55,11 +55,11 @@ textarea {
 .tablenormal {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    display: inline-block;
     overflow: auto;
     box-sizing: border-box; /* causes item size to include border and padding */
     -moz-box-sizing: border-box;
-    width: 100%;
+    display: block;
+    max-height: 500px;
 }
 
 .tablenormal td, #tablenormal th {
@@ -79,9 +79,11 @@ textarea {
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 5px;
+    padding-right: 5px;
     text-align: left;
-    background-color: #4CAF50;
+    background-color: cornflowerblue;
     color: white;
+
 }
 
 dl {
@@ -126,9 +128,9 @@ dd {
    display: block;
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
-}
+    .sidenav a:hover {
+        color: cornflowerblue;
+    }
 
 
 
@@ -160,7 +162,7 @@ dd {
 
 /* Add an active class to the active dropdown button */
 .active {
-    background-color: green;
+    background-color: cornflowerblue;
     color: white;
 }
 
