@@ -49,6 +49,10 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\AircraftMaintenance\" />
+  </ItemGroup>
+
 
 
 </Project>

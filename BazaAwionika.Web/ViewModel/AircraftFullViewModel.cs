@@ -8,7 +8,6 @@ namespace BazaAwionika.Web.ViewModel
 {
     public class AircraftFullViewModel
     {
-
         public int Id { get; set; }
 
         [Display(Name = "Nalot")]
@@ -53,8 +52,6 @@ namespace BazaAwionika.Web.ViewModel
         public int? AircraftStatusId { get; set; }
 
         public int? UserId { get; set; }
-
-
 
         public virtual ICollection<AlternatorViewModel> Alternators { get; set; }
 
@@ -102,5 +99,7 @@ namespace BazaAwionika.Web.ViewModel
         public virtual ICollection<AircraftMaintenanceViewModel> AircraftMaintenances { get; set; }
 
         public virtual ICollection<FlightViewModel> Flights { get; set; }
+
+        #endregion
     }
 }

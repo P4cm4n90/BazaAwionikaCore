@@ -50,6 +50,8 @@ namespace BazaAwionika.Web
               .ForMember(a => a.FlightHours, map => map.MapFrom(vm => vm.FlightHours))
               .ForPath(a => a.AircraftStatusName, map => map.MapFrom(vm => vm.AircraftStatus.Name));
 
+            CreateMap<AircraftModel, AircraftFullViewModel>().ReverseMap();
+
         }
 
         public override string ProfileName
