@@ -9,65 +9,24 @@
     @Html.ActionLink("Stwórz nowy", "Create")
 </p>
 
-<style type="text/css">
-    #vertical-2 thead, #vertical-2 tbody {
-        display: inline-block;
-    }
-</style>
-<table id="vertical-2">
-    <caption>Second Way</caption>
-    <thead>
-        <tr>
-            <th colspan="1">@BazaAwionika.Web.Locale.Strings.AircraftName</th>
-        </tr>
-        <tr>
-            <th rowspan="2">Header 2</th>
-        </tr>
-        <tr> <th></th></tr>
-        <tr>
-            <th colspan="3">Header 3</th>
-        </tr>
-        <tr>
-            <th>@BazaAwionika.Web.Locale.Strings.FlightHours</th>
-        </tr>
 
-
-    </thead>
-    <tbody>
-        <tr>
-            @foreach (BazaAwionika.Web.ViewModel.AircraftFullViewModel aircraft in Model)
-            {
-                <th>@aircraft.TailNumber</th>
-            }
-
-        </tr>
-        <tr>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-        </tr>
-        <tr>
-            <td>data</td>
-            <td>data</td>
-            <td>data</td>
-        </tr>
-        <tr>
-            @foreach (BazaAwionika.Web.ViewModel.AircraftFullViewModel aircraft in Model)
-            {
-                <td>@aircraft.FlightHours</td>
-            }
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <th>@BazaAwionika.Web.Locale.Strings.FlightHours</th>
-            @foreach (BazaAwionika.Web.ViewModel.AircraftFullViewModel aircraft in Model)
-            {
-                <td>@aircraft.FlightHours</td>
-            }
-        </tr>
-    </tfoot>
+<table id="vertical-1">
+    <caption>First Way</caption>
+    <tr>
+        <th>Lp.</th>
+        <th>Nazwa / czynności do wykonania</th>
+        <th>Częstotliwość wykonania</th>
+    </tr>
+    <tr>
+        <th>ELT</th>
+        <th>100 FH lub 3 miesiące</th>
+    </tr>
+    <tr>
+        <th>ELT</th>
+        <th>Zgodnie z datą ważności baterii</th>
+    </tr>
 </table>
+
 
 
 

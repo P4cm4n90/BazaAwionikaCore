@@ -55,7 +55,11 @@ namespace BazaAwionika.Web.Locales
         public string BtnAdd = "Utwórz nowy";
         public string BtnEdit = "Edytuj";
         public string NotFoundAircraft = "Nie znaleziono samolotu o danym numerze";
-
+        public string[] MaintenanceList = { "ELT"
+        ,"ELT Test Funkcjonalny",
+        "Światła Awaryjne",
+        "Akumulatory",
+        "Generator DC " };
 
     }
 }
