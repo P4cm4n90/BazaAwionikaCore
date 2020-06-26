@@ -31,6 +31,7 @@ namespace BazaAwionika.Web
              .ForMember(a => a.Location, map => map.MapFrom(vm => vm.Location))
              .ForMember(a => a.Id, map => map.MapFrom(vm => vm.Id)); 
 
+
             CreateMap<AircraftModel, AircraftViewModel>()
              .ForMember(a => a.TailNumber, map => map.MapFrom(vm => vm.TailNumber))
              .ForMember(a => a.SerialNumber, map => map.MapFrom(vm => vm.SerialNumber))

@@ -117,6 +117,7 @@ namespace BazaAwionika.Data
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder)
         {
             var conntectionString = configuration.GetConnectionString("MaintenanceEntities");
+            dbContextOptionsBuilder.UseLazyLoadingProxies();
             dbContextOptionsBuilder.UseSqlServer(conntectionString);
         }
 

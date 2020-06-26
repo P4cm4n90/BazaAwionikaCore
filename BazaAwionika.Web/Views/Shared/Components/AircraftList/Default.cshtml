@@ -7,7 +7,7 @@
 
 
 
-    <div class="navbar">
+    <div class="navbar" id="AircraftListNavBar">
         @foreach (BazaAwionika.Web.ViewModel.AircraftSmallViewModel item in Model)
         {
             <a href="#"><i class="fa fa-fw fa-plane"></i> @item.TailNumber<br>@item.FlightHours FH<br>@item.AircraftStatusName</a>

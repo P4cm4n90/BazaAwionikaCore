@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BazaAwionika.Data\BazaAwionika.Data.csproj" />
     <ProjectReference Include="..\BazaAwionika.Model\BazaAwionika.Model.csproj" />
   </ItemGroup>
