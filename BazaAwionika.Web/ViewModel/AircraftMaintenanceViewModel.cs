@@ -13,9 +13,13 @@ namespace BazaAwionika.Web.ViewModel
 
         public string Name { get; set; }
 
-        public DateTime DateExpiration { get; set; }
+        public DateTime? DateExpiration { get; set; }
 
-        public DateTime DateExecution { get; set; }
+        public DateTime? DateExecution { get; set; }
+
+        public int? FlightHoursExecution { get; set; }
+
+        public int? FlightHoursExpiration { get; set; }
 
         [MaxLength(100)]
         public string AdditionalInformation { get; set; }

@@ -22,13 +22,17 @@ namespace BazaAwionika.Model
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         [Display(Name = "Data ważnosći")]
-        public DateTime DateExpiration { get; set; }
+        public DateTime? DateExpiration { get; set; }
 
         [Column(TypeName = "smalldatetime")]
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         [Display(Name = "Data wykonania")]
-        public DateTime DateExecution { get; set; }
+        public DateTime? DateExecution { get; set; }
+
+        public int? FlightHoursExecution { get; set; }
+
+        public int? FlightHoursExpiration { get; set; }
 
         public bool IsActual { get; set; } = false;
 

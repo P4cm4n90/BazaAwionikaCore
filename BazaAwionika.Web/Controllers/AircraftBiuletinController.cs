@@ -27,6 +27,8 @@ namespace BazaAwionika.Web.Controllers
             IEnumerable<AircraftBiuletinViewModel> aircraftBiuletinViewModels =
                 AutoMapperConfiguration.Mapper.Map<IEnumerable<AircraftBiuletinModel>,
                 IEnumerable<AircraftBiuletinViewModel>>(aircraftBiuletinModels);
+
+            List<AircraftBiuletinsViewModel> aircraftBiuletinsViewModels = new List<AircraftBiuletinsViewModel>();
             return View(aircraftBiuletinViewModels);
         }
 

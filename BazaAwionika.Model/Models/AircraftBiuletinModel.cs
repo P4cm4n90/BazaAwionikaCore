@@ -27,6 +27,10 @@ namespace BazaAwionika.Model
         [Display(Name = "Data wykonania")]
         public DateTime DateExecution { get; set; } 
 
+        public int? FlightHoursExecution { get; set; }
+
+        public int? FlightHoursExpiration { get; set; }
+
         public string AdditionalInformation { get; set; }
 
         public bool? IsRequired {get; set;}
