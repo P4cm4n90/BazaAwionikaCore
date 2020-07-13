@@ -10,37 +10,37 @@
     <div class="w3-col w3-container m2 l3">
         <table class="w3-table-all">
 
-            <tr><td>@Html.DisplayNameFor(model => model.TailNumber)</td>
+            <tr><td>@Locale.Strings.TailNumber</td>
                 <td>@Html.DisplayFor(model => model.TailNumber)</td></tr>
-            <tr><td>@Html.DisplayNameFor(model => model.SerialNumber)</td>
+            <tr><td>@Locale.Strings.SerialNumber</td>
                 <td>@Html.DisplayFor(model => model.SerialNumber)</td></tr>
-            <tr><td>@Html.DisplayNameFor(model => model.FlightHours) </td>
+            <tr><td>@Locale.Strings.FlightHours </td>
                 <td>@Html.DisplayFor(model => model.FlightHours)</td></tr>
-            <tr><td>@Html.DisplayNameFor(model => model.DateFlightHours)</td>
+            <tr><td>@Locale.Strings.DateFlightHours</td>
                 <td>@Html.DisplayFor(model => model.DateFlightHours)</td></tr>
-            <tr><td>@Html.DisplayNameFor(model => model.AdditionalInfo)</td>
+            <tr><td>@Locale.Strings.AdditionalInfo</td>
                 <td>@Html.DisplayFor(model => model.AdditionalInfo)</td></tr>
-            <tr><td>@Html.DisplayNameFor(model => model.DateAdd)</td>
+            <tr><td>@Locale.Strings.DateAdd</td>
                 <td>@Html.DisplayFor(model => model.DateAdd)</td></tr>
 
            </table>
 </div>
-    <div class="w3-col w3-container m3 l3">
+    <div class="w3-col w3-container s4 m4 l3">
         <table class="w3-table-all">
             <tr>
-                <td>@Html.DisplayNameFor(model => model.AircraftStatusName)</td>
+                <td>@Locale.Strings.Status</td>
                 <td>@Html.DisplayFor(model => model.AircraftStatusName)</td>
             </tr>
             <tr>
-                <td>@Html.DisplayNameFor(model => model.AircraftLocationName)</td>
+                <td>@Locale.Strings.Location/td>
                 <td>@Html.DisplayFor(model => model.AircraftLocationName)</td>
             </tr>
             <tr>
-                <td>@Html.DisplayNameFor(model => model.DateStart) </td>
+                <td>@Locale.Strings.DateStart </td>
                 <td>@Html.DisplayFor(model => model.DateStart)</td>
             </tr>
             <tr>
-                <td>@Html.DisplayNameFor(model => model.DateEnd)</td>
+                <td>@Locale.Strings.DateEnd</td>
                 <td>@Html.DisplayFor(model => model.DateEnd)</td>
             </tr>
         </table>
@@ -50,10 +50,11 @@
 
     @Html.AntiForgeryToken()
 
+
     <div class="form-actions no-color">
-        @Html.ActionLink("Edycja", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
-        <input id="delete_btn" type="button" value="@Locale.Strings.BtnDelete" class="btn btn-default" />
-        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+        <button class="tablinks" autofocus onclick="location.href='@Url.Action("Index", "Aircrafts")'">@Locale.Strings.BackList</button>
+        <button id="edit_btn" class="tablinks" autofocus type="submit" >@Locale.Strings.BtnEdit</button>
+        <button id="delete_btn" autofocus type="submit" class="tablinks"> @Locale.Strings.BtnDelete </button>
     </div>
 </form>
 <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
@@ -75,6 +76,7 @@
                         "id": id
                         },
                     success: function (result) {
+
                         console.log("Success: ", result)
                     },
                     error: function (data) {
@@ -82,6 +84,31 @@
                     }
                 });
             }
+    })
+
+    $(document).on("click", "#edit_btn", function (e) {
+        e.preventDefault();
+        var form = $('#__AjaxAntiForgeryForm');
+        var token = $('input[name="__RequestVerificationToken"]', form).val();
+        var new_url = "@Url.Action("Edit","Aircrafts", new { id = Model.Id })";
+        var id = @Model.Id;
+
+                $.ajax({
+                    url: new_url,
+                    type: "GET",
+                    data: {
+                        __RequestVerificationToken: token,
+                        "id": id
+                        },
+                    success: function (result) {
+                        console.log("Success: ", result)
+                        window.location.href = new_url;
+                    },
+                    error: function (data) {
+                        console.log("ERROR: ", data)
+                    }
+                });
+
         })
 
 

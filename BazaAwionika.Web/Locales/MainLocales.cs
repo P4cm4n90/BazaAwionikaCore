@@ -19,6 +19,9 @@ namespace BazaAwionika.Web.Locales
         public string DateExpiration = "Nast. sprawdzenie";
         public string DateExecution = "Wykonanie";
         public string DaysRemaining = "Pozostało dni";
+        public string DateFlightHours = "Data nalotu";
+        public string DateStart = "Data wylotu";
+        public string DateEnd = "Data powrotu";
         public string FlightHoursExecution = "Wykonano";
         public string FlightHoursExpiration = "Nast. sprawdzenie";
         public string FlightHoursRemaining = "Pozostało";
@@ -49,6 +52,8 @@ namespace BazaAwionika.Web.Locales
         public string Performer = "Wykonujący";
         public string DatabaseName = "Nazwa bazy danych";
         public string Name = "Nazwa";
+        public string Status = "Status";
+        public string Location = "Lokalizacja";
         public string DeleteConfirmation = "Czy napewno chcesz usunąc ten wpis?";
         public string BackList = "Powrót do listy";
         public string BtnDelete = "Usuń wpis";
@@ -60,6 +65,12 @@ namespace BazaAwionika.Web.Locales
         "Światła Awaryjne",
         "Akumulatory",
         "Generator DC " };
+        public string Create = "Dodaj nowy";
+        public string AircraftMaintenance = "Prace okresowe";
+        public string AircraftBiuletin = "Biuletyny";
+        public string AircraftStatus = "Baza statusów";
+        public string SaveChanges = "Zapisz zmiany";
+        public string Return = "Powrót";
 
     }
 }

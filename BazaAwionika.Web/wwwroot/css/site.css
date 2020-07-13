@@ -62,8 +62,6 @@ textarea {
     -moz-box-sizing: border-box;
     display: block;
     max-height: 500px;
-    padding-left: 16px;
-    padding-right: 16px;
 }
 
 .tablenormal td, #tablenormal th {
@@ -160,6 +158,7 @@ dd {
 /* Main content */
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
+    padding-left: 10px;
     font-size: 15px; /* Increased text to enable scrolling */
     padding: 0px 10px;
     
@@ -262,3 +261,17 @@ tr:nth-child(even) {
     padding-top: 15px
 }
 
+.w3-row
+{
+    padding-bottom: 5px;
+}
+
+.form-horizontale
+{
+    padding-top: 50px
+}
+
+#aircraftLayoutTab
+{
+    padding-bottom: 10px
+}

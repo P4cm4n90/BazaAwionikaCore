@@ -13,21 +13,22 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/w3.css" />
-    @RenderSection("styles", false) ;
+    @RenderSection("styles", false)
 </head>
 <body>
-    <div class="tab">
-        <a href="@Url.Action("Index", "Aircrafts")">Samoloty</a>
-        <button class="tablinks" onclick="location.href='@Url.Action("Index", "AircraftMaintenance")'">Prace</button>
-        <button class="tablinks" onclick="location.href='@Url.Action("Index", "AircraftBiuletin")'">Biuletyny</button>
-        <button class="tablinks" onclick="location.href='@Url.Action("Index", "AircraftStatus")'">Baza statusów</button>
+    <div class="tab" id="aircraftLayoutTab">
+
+        <button class="tablinks" onclick="location.href='@Url.Action("Create", "Aircrafts")'">@Locale.Strings.Create</button>
+        <button class="tablinks" onclick="location.href='@Url.Action("Index", "AircraftMaintenance")'">@Locale.Strings.AircraftMaintenance</button>
+        <button class="tablinks" onclick="location.href='@Url.Action("Index", "AircraftBiuletin")'">@Locale.Strings.AircraftBiuletin</button>
+        <button class="tablinks" onclick="location.href='@Url.Action("Index", "AircraftStatus")'">@Locale.Strings.AircraftStatus</button>
     </div>
 
     @RenderBody()
 
     <hr />
     <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
-    <script type='text/javascript' src="~/lib/bootstrap/disc/js/bootstrap.js"> </script>
+    <script type='text/javascript' src="~/lib/bootstrap/dist/js/bootstrap.js"> </script>
     @RenderSection("scripts", required: false)
 
 </body>

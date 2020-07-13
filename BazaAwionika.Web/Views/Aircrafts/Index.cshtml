@@ -5,22 +5,20 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AircraftLayout.cshtml";
 }
-<p>Samoloty</p>
-<p>
-    @Html.ActionLink("Stwórz nowy", "Create")
-</p>
+
+    <h2>Samoloty Informacje</h2>
 
 <table class="tablenormal">
 
     <tr>
-        <th>@Html.DisplayNameFor(model => model.TailNumber)</th>
-        <th>@Html.DisplayNameFor(model => model.AircraftStatusName)</th>
-        <th>@Html.DisplayNameFor(model => model.FlightHours)</th>
-        <th>@Html.DisplayNameFor(model => model.DateFlightHours)</th>
-        <th>@Html.DisplayNameFor(model => model.AdditionalInfo)</th>
-        <th>@Html.DisplayNameFor(model => model.Location)</th>
-        <th>@Html.DisplayNameFor(model => model.DateStart)</th>
-        <th>@Html.DisplayNameFor(model => model.DateEnd)</th>
+        <th>@Locale.Strings.Name</th>
+        <th>@Locale.Strings.Status</th>
+        <th>@Locale.Strings.FlightHours</th>
+        <th>@Locale.Strings.DateFlightHours</th>
+        <th>@Locale.Strings.AdditionalInfo</th>
+        <th>@Locale.Strings.Location</th>
+        <th>@Locale.Strings.DateStart</th>
+        <th>@Locale.Strings.DateEnd</th>
 
     </tr>
     @foreach (BazaAwionika.Web.ViewModel.AircraftViewModel aircraft in Model)

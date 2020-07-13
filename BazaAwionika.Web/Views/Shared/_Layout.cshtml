@@ -19,7 +19,10 @@
 
 
 <body>
-    @await Component.InvokeAsync("AircraftList");
+    <header>
+        @await Component.InvokeAsync("AircraftList");
+    </header>
+
 
     <div class="sidenav">
         @Html.ActionLink("Strona główna", "Index", "Home")
