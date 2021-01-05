@@ -15,6 +15,8 @@ namespace BazaAwionika.Data.Configuration
         public void Configure(EntityTypeBuilder<SettingsModel> builder)
         {
             builder.Property(c => c.SettingsName).IsUnicode(false).HasMaxLength(30).IsRequired();
+            builder.HasMany(c => c.AircraftBiuletinModel).WithOne(c => c.Settings).HasForeignKey(c => c.SettingsId).IsRequired(false).OnDelete(DeleteBehavior.ClientSetNull);
+            builder.HasMany(c => c.AircraftMaintenanceModel).WithOne(c => c.Settings).HasForeignKey(c => c.SettingsId).IsRequired(false).OnDelete(DeleteBehavior.ClientSetNull);
             builder.HasMany(c => c.Alternators).WithOne(c => c.Settings).HasForeignKey(c => c.SettingsId).IsRequired(false).OnDelete(DeleteBehavior.ClientSetNull);
             builder.HasMany(c => c.Batteries).WithOne(c => c.Settings).HasForeignKey(c => c.SettingsId).IsRequired(false).OnDelete(DeleteBehavior.ClientSetNull);
             builder.HasMany(c => c.EgpwsDatabase).WithOne(c => c.Settings).HasForeignKey(c => c.SettingsId).IsRequired(false).OnDelete(DeleteBehavior.ClientSetNull);

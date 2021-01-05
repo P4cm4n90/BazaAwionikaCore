@@ -40,6 +40,10 @@ namespace BazaAwionika.Model
         [DataType(DataType.Date)]
         public DateTime? DateAdd { get; set; } = DateTime.Now;
 
+        public virtual ICollection<AircraftBiuletinModel> AircraftBiuletinModel { get; set; }
+
+        public virtual ICollection<AircraftMaintenanceModel> AircraftMaintenanceModel { get; set; }
+
         public virtual ICollection<AlternatorModel> Alternators { get; set; }
 
         public virtual ICollection<BatteryModel> Batteries { get; set; }

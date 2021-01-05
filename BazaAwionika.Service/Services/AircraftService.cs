@@ -81,6 +81,8 @@ namespace BazaAwionika.Services
         /// <returns></returns>
         public AircraftModel GetAircraft(int id)
         {
+            if (id == 0)
+                return null;
             return aircraftRepository.GetById(id);
         }
 

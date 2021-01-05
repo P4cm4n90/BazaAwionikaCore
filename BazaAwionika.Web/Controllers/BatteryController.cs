@@ -107,7 +107,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 BatteryModel batteryModel = batteryService.GetBattery(batteryViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<BatteryModel>(batteryViewModel);
+                AutoMapperConfiguration.Mapper.Map(batteryViewModel,batteryModel);
                 batteryService.SaveBattery();
                     
                 return RedirectToAction("Index");

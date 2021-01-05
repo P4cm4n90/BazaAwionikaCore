@@ -12,7 +12,7 @@ namespace BazaAwionika.Web.ViewModel
 
         public DateTime? DateExecution { get; set; }
 
-        public int? FlightHoursExecution { get; set; }
+        public int? FlightHoursExecution { get; set; } = 0;
 
         public int? FlightHoursExpiration { get; set; }
 
@@ -25,6 +25,37 @@ namespace BazaAwionika.Web.ViewModel
         public int AircraftId { get; set; }
 
         public string AircraftName { get; set; }
+
+        public int? AircraftFlightHours { get; set; }
+
+        public int? FlightHoursRemaining { get
+            {
+                if (FlightHoursExecution != 0)
+                    return FlightHoursExpiration - AircraftFlightHours;
+                else
+                    return 0;
+            }
+        }
+
+        public int? DaysRemaining
+        {
+            get
+            {
+                if (DateExpiration == null)
+                    return 0;
+                else
+                    return CalcHelper.CalcDaysBetweenDates((DateTime)DateExpiration, DateTime.Now.Date);
+            }
+        }
+
+        public bool IsDone { get
+            {
+                if (FlightHoursExecution > 0 || DateExecution != null)
+                    return true;
+                else
+                    return false;
+            }
+        }
 
     }
 }

@@ -7,63 +7,41 @@
 
 
 
-<h2>Samoloty Informacje</h2>
+<h2>Biuletyny</h2>
 
 <table class="tablenormal">
 
     <tr>
+        <th>@Locale.Strings.AircraftName</th>
         <th>@Locale.Strings.Name</th>
-        <th>@Locale.Strings.Status</th>
-        <th>@Locale.Strings.FlightHours</th>
-        <th>@Locale.Strings.DateFlightHours</th>
-        <th>@Locale.Strings.AdditionalInfo</th>
-        <th>@Locale.Strings.Location</th>
-        <th>@Locale.Strings.DateStart</th>
-        <th>@Locale.Strings.DateEnd</th>
+        <th>@Locale.Strings.FlightHoursExecution</th>
+        <th>@Locale.Strings.DateExecution</th>
+        <th>@Locale.Strings.FlightHoursRemaining</th>
+        <th>@Locale.Strings.DaysRemaining</th>
+        <th>@Locale.Strings.FlightHoursExpiration</th>
+        <th>@Locale.Strings.DateExpiration</th>
+
 
     </tr>
     @foreach (BazaAwionika.Web.ViewModel.AircraftBiuletinViewModel aircraft in Model)
     {
-        <tr class="kliki" data-id="@aircraft.Id">
-            <td>@aircraft.TailNumber</td>
-            <td>@aircraft.AircraftStatusName</td>
-            <td>@aircraft.FlightHours</td>
-            <td>@aircraft.DateFlightHours</td>
-            <td>@aircraft.AdditionalInfo</td>
-            <td>@aircraft.Location</td>
-            <td>@aircraft.DateStart</td>
-            <td>@aircraft.DateEnd</td>
+<tr class="kliki" data-id="@aircraft.Id">
 
-        </tr>
+    <td>@aircraft.AircraftName</td>
+    <td>@aircraft.Name</td>
+    <td>@aircraft.FlightHoursExecution</td>
+    <td>@aircraft.DateExecution</td>
+    <td>@aircraft.FlightHoursRemaining</td>
+    <td>@aircraft.DaysRemaining</td>
+    <td>@aircraft.FlightHoursExpiration</td>
+    <td>@aircraft.DateExpiration</td>
+
+</tr>
     }
 </table>
 
 <div id="itemDetails">
 </div>
-
-@section scripts{
-    <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
-    <script type="text/javascript">
-        $(".kliki").on("click", function () {
-            var itemId = $(this).data('id');
-            $.ajax({
-                url: "@Url.Action("Details", "Aircrafts")",
-                type: "GET",
-                data: {
-                    "id": itemId
-                },
-                success: function (result) {
-                    $("#itemDetails").html(result);
-                },
-                error: function (data) {
-                    console.log("ERROR: ", data)
-                }
-            })
-        });
-
-    </script>
-}
-
 
 
 <script type='text/javascript' src="~/lib/jquery/dist/jquery.js">

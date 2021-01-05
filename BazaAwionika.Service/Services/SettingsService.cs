@@ -42,6 +42,8 @@ namespace BazaAwionika.Services
 
         public SettingsModel GetSettings(int id)
         {
+            if (id == 0)
+                return null;
             return settingsRepository.GetById(id);
         }
 

@@ -20,7 +20,7 @@ namespace BazaAwionika.Web
              .ForMember(a => a.DateExecution, map => map.MapFrom(vm => vm.DateExecution))
              .ForMember(a => a.DateExpiration, map => map.MapFrom(vm => vm.DateExpiration))
              .ForMember(a => a.FlightHoursExpiration, map => map.MapFrom(vm => vm.FlightHoursExpiration))
-             .ForMember(a => a.FlightHoursExecutiion, map => map.MapFrom(vm => vm.FlightHoursExecutiion))
+             .ForMember(a => a.FlightHoursExecution, map => map.MapFrom(vm => vm.FlightHoursExecution))
              .ForMember(a => a.IsActual, map => map.MapFrom(vm => vm.IsActual))
              .ForPath(a => a.Aircraft.TailNumber, map => map.MapFrom(vm => vm.AircraftName))
              .ForMember(a => a.AdditionalInformation, map => map.MapFrom(vm => vm.AdditionalInformation))

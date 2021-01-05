@@ -15,6 +15,7 @@ namespace BazaAwionika.Web.Locales
         public string AircraftName = "Nr. samolotu";
         public string SettingsId = "Nr. ustawień";
         public string SettingsName = "Nazwa ustawień";
+        public string AircraftFlightHours = "Nalot samolotu";
         public string FlightHours = "Nalot całkowity";
         public string DateExpiration = "Nast. sprawdzenie";
         public string DateExecution = "Wykonanie";
@@ -24,6 +25,7 @@ namespace BazaAwionika.Web.Locales
         public string DateEnd = "Data powrotu";
         public string FlightHoursExecution = "Wykonano";
         public string FlightHoursExpiration = "Nast. sprawdzenie";
+        public string FlightHoursExpirationSingle = "Sprawdzenie nalot";
         public string FlightHoursRemaining = "Pozostało";
         public string FlightHoursAircraftInstallation = "Nalot samolotu przy zabudowie";
         public string FlightHoursBrushes = "Nalot szczotek przy zabudowie na samolot";

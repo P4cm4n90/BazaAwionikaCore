@@ -34,6 +34,8 @@ namespace BazaAwionika.Services
 
         public UserModel GetUser(int id)
         {
+            if (id == 0)
+                return null;
             return userRepository.GetById(id);
         }
 

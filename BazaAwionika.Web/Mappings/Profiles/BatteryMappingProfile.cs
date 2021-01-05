@@ -25,6 +25,7 @@ namespace BazaAwionika.Web
                 .ForMember(a => a.AircraftId, map => map.MapFrom(vm => vm.AircraftId))
                 .ForMember(a => a.SettingsId, map => map.MapFrom(vm => vm.SettingsId));
 
+
             CreateMap<BatteryModel, BatteryViewModel>()
                 .ForMember(a => a.Id, map => map.MapFrom(vm => vm.Id))
                 .ForMember(a => a.FlightHoursExecution, map => map.MapFrom(vm => vm.FlightHoursExecution))
