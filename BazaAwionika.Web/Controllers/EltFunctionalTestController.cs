@@ -107,7 +107,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 EltFunctionalTestModel eltFunctionalTestModel = eltFunctionalTestService.GetEltFunctionalTest(eltFunctionalTestViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<EltFunctionalTestModel>(eltFunctionalTestViewModel);
+                AutoMapperConfiguration.Mapper.Map(eltFunctionalTestViewModel, eltFunctionalTestModel);
                 eltFunctionalTestService.SaveEltFunctionalTest();
                     
                 return RedirectToAction("Index");

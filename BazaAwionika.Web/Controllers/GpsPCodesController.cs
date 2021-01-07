@@ -107,7 +107,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 GpsPCodesModel gpsPCodesModel = gpsPCodesService.GetGpsPCodes(gpsPCodesViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<GpsPCodesModel>(gpsPCodesViewModel);
+                AutoMapperConfiguration.Mapper.Map(gpsPCodesViewModel, gpsPCodesModel);
                 gpsPCodesService.SaveGpsPCodes();
                     
                 return RedirectToAction("Index");

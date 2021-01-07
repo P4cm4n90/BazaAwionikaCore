@@ -107,7 +107,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 FdrReadModel fdrReadModel = fdrReadService.GetFdrRead(fdrReadViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<FdrReadModel>(fdrReadViewModel);
+                AutoMapperConfiguration.Mapper.Map(fdrReadViewModel, fdrReadModel);
                 fdrReadService.SaveFdrRead();
                     
                 return RedirectToAction("Index");

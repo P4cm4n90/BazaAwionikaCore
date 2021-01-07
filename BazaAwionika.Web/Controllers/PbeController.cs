@@ -108,7 +108,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 PbeModel pbeModel = pbeService.GetPbe(pbeViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<PbeModel>(pbeViewModel);
+                AutoMapperConfiguration.Mapper.Map(pbeViewModel, pbeModel);
                 pbeService.SavePbe();
                     
                 return RedirectToAction("Index");

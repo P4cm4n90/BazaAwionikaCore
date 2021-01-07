@@ -93,7 +93,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 UserModel userModel = userService.GetUser((int)userViewModel.Id);
-                userModel = AutoMapperConfiguration.Mapper.Map<UserModel>(userViewModel);
+               AutoMapperConfiguration.Mapper.Map(userViewModel, userModel);
                 userService.UpdateUser(userModel);
                 userService.SaveUser();              
             }

@@ -107,7 +107,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 UlbCvrModel ulbCvrModel = ulbCvrService.GetUlbCvr(ulbCvrViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<UlbCvrModel>(ulbCvrViewModel);
+                AutoMapperConfiguration.Mapper.Map(ulbCvrViewModel, ulbCvrModel);
                 ulbCvrService.SaveUlbCvr();
                     
                 return RedirectToAction("Index");

@@ -117,7 +117,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 AlternatorModel alternatorModel = alternatorService.GetAlternator(alternatorViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<AlternatorModel>(alternatorViewModel);
+                AutoMapperConfiguration.Mapper.Map(alternatorViewModel,alternatorModel);
                 alternatorService.SaveAlternator();
                 return RedirectToAction("Index");
             }

@@ -107,7 +107,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 GpsBatteriesModel gpsBatteriesModel = gpsBatteriesService.GetGpsBatteries(gpsBatteriesViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<GpsBatteriesModel>(gpsBatteriesViewModel);
+                AutoMapperConfiguration.Mapper.Map(gpsBatteriesViewModel, gpsBatteriesModel);
                 gpsBatteriesService.SaveGpsBatteries();
                     
                 return RedirectToAction("Index");

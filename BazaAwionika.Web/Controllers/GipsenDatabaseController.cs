@@ -107,7 +107,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 GipsenDatabaseModel gipsenDatabaseModel = gipsenDatabaseService.GetGipsenDatabase(gipsenDatabaseViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<GipsenDatabaseModel>(gipsenDatabaseViewModel);
+                AutoMapperConfiguration.Mapper.Map(gipsenDatabaseViewModel, gipsenDatabaseModel);
                 gipsenDatabaseService.SaveGipsenDatabase();
                     
                 return RedirectToAction("Index");

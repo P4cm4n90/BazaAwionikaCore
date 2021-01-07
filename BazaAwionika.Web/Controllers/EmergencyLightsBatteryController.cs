@@ -114,7 +114,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 EmergencyLightsBatteryModel emergencyLightsBatteryModel = emergencyLightsBatteryService.GetEmergencyLightsBattery(emergencyLightsBatteryViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<EmergencyLightsBatteryModel>(emergencyLightsBatteryViewModel);
+                AutoMapperConfiguration.Mapper.Map(emergencyLightsBatteryViewModel, emergencyLightsBatteryModel);
                 emergencyLightsBatteryService.SaveEmergencyLightsBattery();
                 return RedirectToAction("Index");
             }

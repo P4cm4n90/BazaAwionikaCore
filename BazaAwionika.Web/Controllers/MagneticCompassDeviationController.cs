@@ -109,7 +109,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 MagneticCompassDeviationModel magneticCompassDeviationModel = magneticCompassDeviationService.GetMagneticCompassDeviation(magneticCompassDeviationViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<MagneticCompassDeviationModel>(magneticCompassDeviationViewModel);
+                AutoMapperConfiguration.Mapper.Map(magneticCompassDeviationViewModel, magneticCompassDeviationModel);
                 magneticCompassDeviationService.SaveMagneticCompassDeviation();
                     
                 return RedirectToAction("Index");

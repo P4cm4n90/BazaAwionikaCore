@@ -107,7 +107,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 EgpwsDatabaseModel egpwsDatabaseModel = egpwsDatabaseService.GetEgpwsDatabase(egpwsDatabaseViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<EgpwsDatabaseModel>(egpwsDatabaseViewModel);
+                AutoMapperConfiguration.Mapper.Map(egpwsDatabaseViewModel,egpwsDatabaseModel);
                 egpwsDatabaseService.SaveEgpwsDatabase();
                     
                 return RedirectToAction("Index");

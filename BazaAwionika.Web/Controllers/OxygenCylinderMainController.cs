@@ -117,7 +117,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 OxygenCylinderMainModel oxygenCylinderMainModel = oxygenCylinderMainService.GetOxygenCylinderMain(oxygenCylinderMainViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<OxygenCylinderMainModel>(oxygenCylinderMainViewModel);
+                AutoMapperConfiguration.Mapper.Map(oxygenCylinderMainViewModel, oxygenCylinderMainModel);
                 oxygenCylinderMainService.SaveOxygenCylinderMain();
                 return RedirectToAction("Index");
             }

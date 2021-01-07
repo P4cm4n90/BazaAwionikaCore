@@ -107,7 +107,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 EltOperationalTestModel eltOperationalTestModel = eltOperationalTestService.GetEltOperationalTest(eltOperationalTestViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<EltOperationalTestModel>(eltOperationalTestViewModel);
+                AutoMapperConfiguration.Mapper.Map(eltOperationalTestViewModel, eltOperationalTestModel);
                 eltOperationalTestService.SaveEltOperationalTest();
 
                 return RedirectToAction("Index");

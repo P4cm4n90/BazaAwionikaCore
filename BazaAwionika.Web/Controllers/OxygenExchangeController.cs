@@ -117,7 +117,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 OxygenExchangeModel oxygenExchangeModel = oxygenExchangeService.GetOxygenExchange(oxygenExchangeViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<OxygenExchangeModel>(oxygenExchangeViewModel);
+                AutoMapperConfiguration.Mapper.Map(oxygenExchangeViewModel, oxygenExchangeModel);
                 oxygenExchangeService.SaveOxygenExchange();
                 return RedirectToAction("Index");
             }

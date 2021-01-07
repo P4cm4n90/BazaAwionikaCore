@@ -108,7 +108,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 TestDcfModel testDcfModel = testDcfService.GetTestDcf(testDcfViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<TestDcfModel>(testDcfViewModel);
+                AutoMapperConfiguration.Mapper.Map(testDcfViewModel, testDcfModel);
                 testDcfService.SaveTestDcf();
                     
                 return RedirectToAction("Index");

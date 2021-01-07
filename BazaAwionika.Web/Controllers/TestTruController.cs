@@ -108,7 +108,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 TestTruModel testTruModel = testTruService.GetTestTru(testTruViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<TestTruModel>(testTruViewModel);
+                AutoMapperConfiguration.Mapper.Map(testTruViewModel, testTruModel);
                 testTruService.SaveTestTru();
                     
                 return RedirectToAction("Index");

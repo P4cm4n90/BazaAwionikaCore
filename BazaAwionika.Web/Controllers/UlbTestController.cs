@@ -108,7 +108,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 UlbTestModel ulbTestModel = ulbTestService.GetUlbTest(ulbTestViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<UlbTestModel>(ulbTestViewModel);
+                AutoMapperConfiguration.Mapper.Map(ulbTestViewModel, ulbTestModel);
                 ulbTestService.SaveUlbTest();
                     
                 return RedirectToAction("Index");

@@ -107,7 +107,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 TestEfisModel testEfisModel = testEfisService.GetTestEfis(testEfisViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<TestEfisModel>(testEfisViewModel);
+                AutoMapperConfiguration.Mapper.Map(testEfisViewModel, testEfisModel);
                 testEfisService.SaveTestEfis();
                     
                 return RedirectToAction("Index");

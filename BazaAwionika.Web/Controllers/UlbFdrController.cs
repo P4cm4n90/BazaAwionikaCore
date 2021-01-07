@@ -108,7 +108,7 @@ namespace BazaAwionika.Web.Controllers
             if (ModelState.IsValid)
             {
                 UlbFdrModel ulbFdrModel = ulbFdrService.GetUlbFdr(ulbFdrViewModel.Id);
-                AutoMapperConfiguration.Mapper.Map<UlbFdrModel>(ulbFdrViewModel);
+                AutoMapperConfiguration.Mapper.Map(ulbFdrViewModel, ulbFdrModel);
                 ulbFdrService.SaveUlbFdr();
                     
                 return RedirectToAction("Index");
