@@ -25,24 +25,37 @@
     </tr>
     @foreach (BazaAwionika.Web.ViewModel.AircraftBiuletinViewModel aircraft in Model)
     {
-<tr class="kliki" data-id="@aircraft.Id">
+        <tr class="kliki" data-id="@aircraft.Id">
 
-    <td>@aircraft.AircraftName</td>
-    <td>@aircraft.Name</td>
-    <td>@aircraft.FlightHoursExecution</td>
-    <td>@aircraft.DateExecution</td>
-    <td>@aircraft.FlightHoursRemaining</td>
-    <td>@aircraft.DaysRemaining</td>
-    <td>@aircraft.FlightHoursExpiration</td>
-    <td>@aircraft.DateExpiration</td>
+            <td>@aircraft.AircraftName</td>
+            <td>@aircraft.Name</td>
+            <td>@aircraft.FlightHoursExecution</td>
+            <td>@aircraft.DateExecution</td>
+            <td>@aircraft.FlightHoursRemaining</td>
+            <td>@aircraft.DaysRemaining</td>
+            <td>@aircraft.FlightHoursExpiration</td>
+            <td>@aircraft.DateExpiration</td>
 
-</tr>
+        </tr>
     }
 </table>
 
 <div id="itemDetails">
 </div>
 
+<script type="text/javascript">
+    var original = "";
+
+    $(".kliki").hover(function () {
+        original = $(this).css("background-color");
+
+        $(this).css("background-color", "#ddd");
+    }, function () {
+        $(this).css("background-color", original);
+    });
+
+
+</script>
 
 <script type='text/javascript' src="~/lib/jquery/dist/jquery.js">
         $(".kliki").on("click", function () {

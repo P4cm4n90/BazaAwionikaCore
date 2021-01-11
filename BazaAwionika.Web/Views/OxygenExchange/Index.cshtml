@@ -31,6 +31,20 @@
 
 @section scripts{
     <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
+
+    <script type="text/javascript">
+        var original = "";
+
+        $(".kliki").hover(function () {
+            original = $(this).css("background-color");
+
+            $(this).css("background-color", "#ddd");
+        }, function () {
+            $(this).css("background-color", original);
+        });
+
+
+    </script>
     <script type="text/javascript">
 
         $(".kliki").on("click", function () {

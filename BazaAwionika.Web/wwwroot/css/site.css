@@ -73,9 +73,9 @@ textarea {
     background-color: #f2f2f2;
 }
 
-.tablenormal tr:hover {
-    background-color: #ddd;
-}
+/*.tablenormal tr:hover {
+    background-color: #ddd!important;
+}*/
 
 .tablenormal th {
     padding-top: 12px;

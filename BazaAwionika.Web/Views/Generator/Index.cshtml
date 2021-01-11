@@ -26,17 +26,17 @@
 
     @foreach (var item in Model)
     {
-<tr class="kliki" data-id="@item.Id">
-    <td> @Html.DisplayFor(modelItem => item.AircraftName)</td>
-    <td> @Html.DisplayFor(modelItem => item.AircraftFlightHours)</td>
-    <td> @Html.DisplayFor(modelItem => item.SerialNumber)</td>
-    <td> @Html.DisplayFor(modelItem => item.FlightHoursBrushesRemaining) </td>
-    <td> @Html.DisplayFor(modelItem => item.FlightHoursBearingsRemaining) </td>
-    <td> @Html.DisplayFor(modelItem => item.FlightHoursOverhaulRemaining) </td>
-    <td> @Html.DisplayFor(modelItem => item.FlightHoursBrushesExpiration) </td>
-    <td> @Html.DisplayFor(modelItem => item.FlightHoursBearingsExpiration) </td>
-    <td> @Html.DisplayFor(modelItem => item.FlightHoursOverhaulExpiration) </td>
-</tr>
+        <tr class="kliki" data-id="@item.Id">
+            <td> @Html.DisplayFor(modelItem => item.AircraftName)</td>
+            <td> @Html.DisplayFor(modelItem => item.AircraftFlightHours)</td>
+            <td> @Html.DisplayFor(modelItem => item.SerialNumber)</td>
+            <td> @Html.DisplayFor(modelItem => item.FlightHoursBrushesRemaining) </td>
+            <td> @Html.DisplayFor(modelItem => item.FlightHoursBearingsRemaining) </td>
+            <td> @Html.DisplayFor(modelItem => item.FlightHoursOverhaulRemaining) </td>
+            <td> @Html.DisplayFor(modelItem => item.FlightHoursBrushesExpiration) </td>
+            <td> @Html.DisplayFor(modelItem => item.FlightHoursBearingsExpiration) </td>
+            <td> @Html.DisplayFor(modelItem => item.FlightHoursOverhaulExpiration) </td>
+        </tr>
     }
 
 </table>
@@ -46,6 +46,22 @@
 @section scripts{
     <script type='text/javascript' src="~/lib/jquery/dist/jquery.js"></script>
     <script type="text/javascript">
+        var original = "";
+
+        $(".kliki").hover(function () {
+            original = $(this).css("background-color");
+
+            $(this).css("background-color", "#ddd");
+        }, function () {
+            $(this).css("background-color", original);
+        });
+
+
+    </script>
+    <script type="text/javascript">
+
+
+
 
         $(".kliki").on("click", function () {
             var itemId = $(this).data('id');
