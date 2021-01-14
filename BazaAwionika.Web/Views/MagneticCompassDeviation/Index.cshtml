@@ -4,7 +4,16 @@
 @{
     ViewBag.Title = "Dewiacja busoli magnetycznej";
 }
+@{
 
+    var labelColours = new Dictionary<MaintStatus, string>()
+{
+        { MaintStatus.Ok, "green" },
+        { MaintStatus.Caution, "yellow" },
+        { MaintStatus.Warning, "orange" },
+        { MaintStatus.Error, "red" }
+    };
+}
 <p>
     @Html.ActionLink("Utwórz nowy", "Create")
 </p>
@@ -18,7 +27,7 @@
 
     @foreach (var item in Model)
     {
-        <tr class="kliki" data-id="@item.Id">
+        <tr class="kliki" data-id="@item.Id" style="background-color: @labelColours[item.MaintStatus];">
             <td>@Html.DisplayFor(modelItem => item.AircraftName) </td>
             <td>@Html.DisplayFor(modelItem => item.DateExecution)</td>
             <td>@Html.DisplayFor(modelItem => item.DaysRemaining)</td>

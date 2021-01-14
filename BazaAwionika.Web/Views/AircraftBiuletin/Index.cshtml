@@ -5,7 +5,16 @@
     Layout = "~/Views/Shared/AircraftLayout.cshtml";
 }
 
+@{
 
+    var labelColours = new Dictionary<MaintStatus, string>()
+{
+        { MaintStatus.Ok, "green" },
+        { MaintStatus.Caution, "yellow" },
+        { MaintStatus.Warning, "orange" },
+        { MaintStatus.Error, "red" }
+    };
+}
 
 <h2>Biuletyny</h2>
 

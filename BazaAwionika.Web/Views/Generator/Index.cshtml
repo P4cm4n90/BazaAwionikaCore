@@ -5,7 +5,16 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@{
+
+    var labelColours = new Dictionary<MaintStatus, string>()
+{
+        { MaintStatus.Ok, "green" },
+        { MaintStatus.Caution, "yellow" },
+        { MaintStatus.Warning, "orange" },
+        { MaintStatus.Error, "red" }
+    };
+}
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -26,7 +35,7 @@
 
     @foreach (var item in Model)
     {
-        <tr class="kliki" data-id="@item.Id">
+        <tr class="kliki" data-id="@item.Id" style="background-color: @labelColours[item.MaintStatus];">
             <td> @Html.DisplayFor(modelItem => item.AircraftName)</td>
             <td> @Html.DisplayFor(modelItem => item.AircraftFlightHours)</td>
             <td> @Html.DisplayFor(modelItem => item.SerialNumber)</td>

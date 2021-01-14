@@ -7,6 +7,16 @@
 }
 
 
+@{
+
+    var labelColours = new Dictionary<MaintStatus, string>()
+{
+        { MaintStatus.Ok, "green" },
+        { MaintStatus.Caution, "yellow" },
+        { MaintStatus.Warning, "orange" },
+        { MaintStatus.Error, "red" }
+    };
+}
 
 <p>
     @Html.ActionLink("Utwórz nowy", "Create")
